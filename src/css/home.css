@@ -1,0 +1,218 @@
+/* Base styles */
+.home-container {
+  background: linear-gradient(rgba(0, 0, 0, 0.653), rgba(0, 0, 0, 0.702)),
+    url('.././images/imageTwo.jpg')no-repeat fixed center center;
+  background-size: cover;
+  min-height: 91vh;
+  /* align-items: center; */
+  padding: 25px;
+  text-align: left;
+}
+
+
+.hero-content {
+  border-radius: 30px;
+  padding: 40px;
+  color: white;
+  max-width: 700px;
+  /* width: 60%; */
+  margin-top: 10rem;
+  box-shadow: 8px 8px 16px #101010f5;
+  background: linear-gradient(rgb(0, 0, 0), rgba(60, 60, 60, 0.054)),
+    url('.././images/imageFive.jpg')no-repeat fixed center center;
+  background-size: cover;
+  /* margin: 0 auto; */
+}
+
+.hero-content h1 {
+  margin-bottom: 15px;
+  font-weight: 900;
+  font-size: 3rem;
+  padding: 20px;
+  font-family: cursive;
+
+}
+
+.hero-content p {
+  padding: 10px;
+  border-radius: 30px;
+  font-family: cursive;
+  font-size: 1.1rem;
+}
+
+/* h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  font-weight: 300;
+} */
+
+.date-display {
+  font-size: 1rem;
+  font-family: cursive;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.time-section {
+  font-size: 2.5rem;
+  font-family: cursive;
+  margin-top: 20px;
+  padding: 10px;
+
+
+}
+
+/* Button styles */
+.login-btn {
+  --color: #ffffff;
+  display: block;
+  padding: 10px 20px;
+  background-color: #9f070700;
+  border: 0.3px solid var(--color);
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  color: white;
+  width: 100%;
+  max-width: 250px;
+  margin-top: 20px;
+  border-radius: 50px;
+
+}
+
+.login-btn::after,
+.login-btn::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: skew(90deg) translate(-50%, -50%);
+  position: absolute;
+  inset: 50%;
+  left: 25%;
+  z-index: -1;
+  transition: 0.5s ease-out;
+  background-color: var(--color);
+}
+
+.login-btn::before {
+  top: -50%;
+  left: -25%;
+  transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.login-btn:hover::before {
+  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.login-btn:hover::after {
+  transform: skew(45deg) translate(-50%, -50%);
+}
+
+.login-btn:hover {
+  color: rgb(0, 0, 0);
+}
+
+.login-btn:active {
+  filter: brightness(0.7);
+  transform: scale(0.98);
+}
+
+/* Loader styles */
+.loader {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: rgb(139, 5, 5);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 20.9px;
+    width: 100%;
+  }
+
+
+
+  .hero-content h1 {
+    text-align: center;
+    font-size: 1.5rem;
+
+  }
+
+  .hero-content p {
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .date-display {
+    font-size: 1.2rem;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .time-section {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .login-btn {
+    padding: 12px 25px;
+    font-size: 14px;
+    max-width: 250px;
+    margin-left: 28px;
+
+
+  }
+
+
+
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    padding: 15px;
+    background-attachment: fixed;
+  }
+
+
+
+
+
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .date-display {
+    font-size: 1rem;
+    margin: 15px 0;
+  }
+
+  .time-section {
+    font-size: 1.5rem;
+  }
+
+  .login-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+    max-width: 250px;
+  }
+}

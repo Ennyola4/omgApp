@@ -1,0 +1,62 @@
+.write-overall-container {
+    margin: 5vh;
+}
+
+.write-overall-container h1 {
+    font-size: 2.5vh;
+    font-weight: 100;
+}
+
+.writeButton {
+    padding: 1vh;
+    border-radius: 20px;
+    font-weight: 200;
+    color: rgb(232, 1, 1);
+    margin-top: 2vh;
+    background-color: #efefef;
+    font-size: 1.5vh;
+    border: 0.5px solid #fff;
+}
+
+.write-overall-container input {
+    border: 0.5px solid white;
+    margin-top: 2.5vh;
+    font-size: 5vh;
+    border-radius: 20px;
+    background-color: rgb(248, 248, 248);
+    color: #090808;
+}
+
+.writeCategory label {
+    padding: 2vh;
+}
+
+.writeCategory{
+    margin-top: 20px;
+}
+
+.selectOption {
+    border-radius: 20px;
+    background-color: pink;
+    padding: 4px;
+}
+.selectOption:hover{
+    background-color: black;
+    color: white;
+    transition: 0.8s;
+}
+
+.writeText{
+    border: 0.5px dashed grey;
+    color: #090808;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 25px;
+}
+
+.textEditor{
+    height: 20vh;
+    overflow: hidden;
+    margin-top: 20px;
+}

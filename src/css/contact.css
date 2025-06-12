@@ -1,0 +1,154 @@
+/* section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    margin-bottom: 10vw;
+} */
+
+
+
+
+
+
+
+.contactImg{
+    /* border-radius: 2vw; */
+    margin-bottom: 5vw;
+    height: 15vw;
+    margin-top: 2vw;
+    margin-left: 0.5vw;
+    
+}
+
+/* From Uiverse.io by codebykay101 */ 
+.container {
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* border-radius: 30px; */
+    border: 1px solid #1e1c1c;
+    border-radius: 5px;
+    box-shadow: inset 5px 5px 10px #812323,
+                inset -5px -5px 10px #812323;
+  }
+  
+  .container form .descr {
+    font-size: 25px;
+    font-weight: 500;
+    color: #e8e8e8;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    text-align: center;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input, textarea {
+    margin: 1em 0 1em 0;
+    width: 300px;
+    position: relative;
+    color: #eee;
+  }
+  
+  .input input, textarea {
+    font-size: 100%;
+    padding: 0.7em;
+    outline: none;
+    color: #e8e8e8;
+    border: none;
+    border-bottom: 2px solid #e8e8e8;
+    background: transparent;
+    border-radius: none;
+    width: 100%;
+    resize: none;
+  }
+  
+  .input label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    color: #e8e8e8;
+    padding: 0.7em;
+    margin-left: 0.1em;
+    pointer-events: none;
+    transition: all 0.5s ease;
+    text-transform: uppercase;
+  }
+  
+  .input :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    padding: 0.4em;
+    background: transparent;
+  }
+  
+  .input textarea:focus ~ label,
+  .input textarea:valid ~ label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    padding: 0.4em;
+    background: transparent;
+  }
+  
+  .inputGroup :is(input:focus, input:valid) {
+    border-color: rgb(37, 37, 211);
+  }
+  
+  .form button {
+    color: #0c0000;
+    font-size: 15px;
+    align-self: flex-start;
+    padding: 0.6em;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 50px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    /* border-radius: 25vw; */
+    width: 20vw;
+  }
+  
+  .form button:before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e8e8e8;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .form button:hover:before {
+    opacity: 0.2;
+  }
+  
+  .form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    color: #da0606;
+  }
+
+  .contactImage{
+    padding: 5em;
+    margin-top: 5em;
+    margin-left: 10em;
+  
+  }
+
+  .homeImg{
+  width: 100%;
+  height: 8em;
+}
+
+  
+  

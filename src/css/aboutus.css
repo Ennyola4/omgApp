@@ -1,0 +1,158 @@
+/* AboutUs.css */
+.about-us {
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    margin-bottom: 100px;
+    background: linear-gradient(rgba(0, 0, 0, 0.488), rgba(0, 0, 0, 0.344)),  url('.././images/imageFive.jpg') no-repeat fixed center center;
+    background-size: cover;
+    padding: 30px;
+    /* border-radius:0 0 30px; */
+    /* background-color: #0052a3; */
+
+}
+
+
+
+.about-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 30px;
+}
+
+/* .tagline {
+    font-size: 1.25rem;
+    color: #666;
+} */
+
+/* .about-section {
+    margin-bottom: 3rem;
+  } */
+
+.about-section-team h2 {
+    margin-bottom: 3rem;
+}
+
+.about-section-team  {
+    margin-bottom: 3rem;
+    padding: 5rem;
+}
+
+
+
+.value-cards {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.value-card {
+    flex: 1;
+    min-width: 250px;
+    padding: 1.5rem;
+    margin: 1.8rem;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.646);
+    background-color: rgba(235, 4, 4, 0.682);
+    border: 1px solid;
+
+
+}
+
+.value-card h3 {
+    color: #ffffff;
+    margin-bottom: 0.2rem;
+    font-family: cursive;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+
+}
+
+.team-member {
+    text-align: center;
+    /* margin-bottom: 10px; */
+}
+
+.member-photo {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 5rem;
+    /* background: #ddd; */
+    border-radius: 50%;
+    padding: 5px;
+    background-color: rgba(255, 0, 0, 0.12);
+}
+
+.cta {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 8px;
+
+}
+
+.cta-button {
+    background: #bc0202ba;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background: #0052a3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .value-cards {
+        flex-direction: column;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.bubble-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    animation: floatBubbles linear infinite;
+    bottom: -100px;
+}
+
+@keyframes floatBubbles {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.1;
+    }
+
+    100% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0;
+    }
+}

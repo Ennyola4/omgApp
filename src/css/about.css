@@ -1,0 +1,63 @@
+.about-overall-container{
+    background:     linear-gradient(rgba(0, 0, 0, 0.613), rgba(0, 0, 0, 0.344)), url('.././images/imageFive.jpg') no-repeat fixed center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    max-width: 797vw;
+}
+
+.btnthree {
+    --color: #e20a0a;
+    --color2: rgb(10, 25, 30);
+    padding: 0.8em 1.75em;
+    background-color: #9f0707;
+    border: .3px solid var(--color);
+    transition: .5s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+    font-weight: 100;
+    font-size: 14px;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+    text-transform: uppercase;
+    color: var(--color);
+    width: 20vw;
+   }
+   
+   .btnthree::after, .btntwo::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    transform: skew(90deg) translate(-50%, -50%);
+    position: absolute;
+    inset: 50%;
+    left: 25%;
+    z-index: -1;
+    transition: .5s ease-out;
+    background-color: var(--color);
+   }
+   
+   .btnthree::before {
+    top: -50%;
+    left: -25%;
+    transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+   }
+   
+   .btnthree:hover::before {
+    transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+   }
+   
+   .btnthree:hover::after {
+    transform: skew(45deg) translate(-50%, -50%);
+   }
+   
+   .btnthree:hover {
+    color: var(--color2);
+   }
+   
+   .btnthree:active {
+    filter: brightness(.7);
+    transform: scale(.98);
+   }

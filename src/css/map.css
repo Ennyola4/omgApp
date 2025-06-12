@@ -1,0 +1,12 @@
+.map-container{
+    background:     linear-gradient(rgba(0, 0, 0, 0.613), rgba(0, 0, 0, 0.344)), url('.././images/imageTen.jpg') no-repeat fixed center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    padding: 5vw;        
+
+}
+
+.map{
+    margin-left: 250px;
+}
