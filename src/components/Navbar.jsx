@@ -83,12 +83,12 @@ const Navbar = () => {
               Contact
             </Link>
           </li>
-          <div className='socialIcons'>
+          {/* <div className='socialIcons'>
             <a href="#" className='m-2' ><ImFacebook2 size="2vh" /></a>
             <a href="#" className='m-2'><BsTwitterX size="2vh" /></a>
             <a href="#" className='m-2'><FaLinkedin size="2vh"  /></a>
             <a href="#" className='m-2' ><FaSquareInstagram size="2vh" /></a>
-          </div>
+          </div> */}
         </ul>
       </div>
     </nav>
