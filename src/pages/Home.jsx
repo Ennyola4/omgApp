@@ -1,6 +1,5 @@
 import React from 'react'
 import HomePagePics from '../components/HomePagePics'
-import Card from '../components/Card'
 import About from '../components/About'
 import Contact from '../components/Contact'
 

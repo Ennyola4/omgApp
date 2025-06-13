@@ -3,14 +3,10 @@ import { motion } from 'framer-motion';
 import '../css/contactuss.css'
 import { MdEmail } from "react-icons/md";
 import { FaPhoneFlip } from "react-icons/fa6";
-// import { FaLocationDot } from "react-icons/fa6";
-import { HiOutlineMailOpen } from "react-icons/hi";
 import { FaLocationDot } from "react-icons/fa6";
 import aos from 'aos'
 import 'aos/dist/aos.css'
 import 'aos/dist/aos.js'
-import MapComponent from '../components/mapComponent';
-import Navbar from '../components/Navbar';
 
 
 
@@ -91,27 +87,7 @@ const ContactUs = () => {
       </div>
 
       <h1 className='text-center mt-3 text-white'>Contact us</h1>
-      {/* <div className='box-wrapper'>
-
-        <div className='box' data-aos="zoom-out" data-aos-duration="1000">
-          <HiOutlineMailOpen size="40px" color='red' /> <br /> <br />
-
-          <p>contact@example.com</p>
-        </div>
-        <div className='box' data-aos="zoom-out" data-aos-duration="2000">
-          <FaLocationDot size="40px" color='red' /> <br /> <br />
-
-          <p>No 4,lola fadeyibi street.yakoyo ojodu berger</p>
-        </div>
-        <div className='box' data-aos="zoom-out" data-aos-duration="2000">
-          <FaPhoneFlip size="40px" color='red' /> <br /> <br />
-          <p>+1 (555) 123-4567</p>
-        </div>
-        <div className='box' data-aos="zoom-out" data-aos-duration="2000">
-          <FaPhoneFlip size="40px" color='red' /> <br /> <br />
-          <p>+1 (555) 123-4567</p>
-        </div>
-      </div> */}
+     
       <div className="contact-container bg-danger">
 
         <div className="contact-wrapper">
