@@ -56,7 +56,6 @@
   font-weight: bold;
   font-size: 1.4rem;
   color: rgb(255, 255, 255);
-  font-family: cursive;
 }
 
 /* Menu icon */
@@ -154,9 +153,9 @@
     font-size: 3vh;
   }
 
-  .socialIcons{
+  /* .socialIcons{
     margin-right: 15vh;
-  }
+  } */
   
 }
 
