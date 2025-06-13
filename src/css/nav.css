@@ -153,9 +153,9 @@
     font-size: 3vh;
   }
 
-  /* .socialIcons{
-    margin-right: 15vh;
-  } */
+  .socialIcons{
+    justify-content: left;
+  }
   
 }
 
