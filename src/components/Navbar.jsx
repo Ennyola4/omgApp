@@ -84,10 +84,10 @@ const Navbar = () => {
             </Link>
           </li>
           <div className='socialIcons'>
-            <a href="#" className='m-2' ><ImFacebook2 size="3vh" /></a>
-            <a href="#" className='m-2'><BsTwitterX size="3vh" /></a>
-            <a href="#" className='m-2'><FaLinkedin size="3.1vh"  /></a>
-            <a href="#" className='m-2' ><FaSquareInstagram size="3.1vh" /></a>
+            <a href="#" className='m-2' ><ImFacebook2 size="2.5vh" /></a>
+            <a href="#" className='m-2'><BsTwitterX size="2.5vh" /></a>
+            <a href="#" className='m-2'><FaLinkedin size="2.5vh"  /></a>
+            <a href="#" className='m-2' ><FaSquareInstagram size="2.5vh" /></a>
           </div>
         </ul>
       </div>
