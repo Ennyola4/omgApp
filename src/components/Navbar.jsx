@@ -16,7 +16,7 @@ const Navbar = () => {
 
   const closeMobileMenu = () => {
     if (window.innerWidth <= 768) {
-      setIsOpen(false);
+      setIsOpen();
     }
   };
 
