@@ -138,16 +138,17 @@
   .success-message {
     text-align: center;
     padding: 20px;
+    color: white;
   }
   
   .success-message h2 {
-    color: #fc0000;
+    color: white;
     margin-bottom: 10px;
   }
   
   .loading-bar {
     height: 4px;
-    background: linear-gradient(to right, #ff0000, #620101);
+    background: linear-gradient(to right, #404040, #ffffff);
     width: 0%;
     margin-top: 30px;
     border-radius: 2px;

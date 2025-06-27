@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import '../css/contactuss.css'
 import { MdEmail } from "react-icons/md";
 import { FaPhoneFlip } from "react-icons/fa6";
@@ -98,9 +98,9 @@ const ContactUs = () => {
             <div className="info-card">
               <h2>Contact Information</h2> <hr />
               <ul >
-                <li><MdEmail size="1vw" style={{ color: "red" }} /> Email : enny@gmail.com</li> <br />
-                <li> <FaPhoneFlip size="1vw" style={{ color: "red" }} /> Phone number : 08102656596</li> <br />
-                <li> <FaLocationDot size="1vw" style={{ color: "red" }} /> Address : no 4 lola fadeyibi street.lagos</li>
+                <li><MdEmail size="2vh" style={{ color: "red" }} /> Email : enny@gmail.com</li> <br />
+                <li> <FaPhoneFlip size="2vh" style={{ color: "red" }} /> Number : 08102656596</li> <br />
+                <li> <FaLocationDot size="2vh" style={{ color: "red" }} /> Address : no 4 lola fadeyibi street.lagos</li>
               </ul> <br />
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad velit sint ullam laboriosam, at reprehenderit minima rem aliquid in rerum dolore, odit ducimus enim quaerat? Iusto a inventore maiores repudiandae?</p>
             </div>

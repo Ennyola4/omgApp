@@ -1,62 +1,214 @@
+/* write.css */
+.write-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
 .write-overall-container {
-    margin: 5vh;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 2.5rem;
+    margin: 2rem auto;
+}
+
+.write-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
 .write-overall-container h1 {
-    font-size: 2.5vh;
-    font-weight: 100;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0;
 }
 
 .writeButton {
-    padding: 1vh;
-    border-radius: 20px;
-    font-weight: 200;
-    color: rgb(232, 1, 1);
-    margin-top: 2vh;
-    background-color: #efefef;
-    font-size: 1.5vh;
-    border: 0.5px solid #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #3182ce;
+    background-color: #ebf8ff;
+    border: 1px solid #bee3f8;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-.write-overall-container input {
-    border: 0.5px solid white;
-    margin-top: 2.5vh;
-    font-size: 5vh;
-    border-radius: 20px;
-    background-color: rgb(248, 248, 248);
-    color: #090808;
+.writeButton:hover {
+    background-color: #d1e8ff;
 }
 
-.writeCategory label {
-    padding: 2vh;
+.writeButton .icon {
+    width: 1.25rem;
+    height: 1.25rem;
 }
 
-.writeCategory{
-    margin-top: 20px;
+.write-title {
+    width: 100%;
+    border: none;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 1.5rem 0;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid #edf2f7;
+    transition: border-color 0.2s ease;
+}
+
+.write-title:focus {
+    outline: none;
+    border-bottom-color: #3182ce;
+}
+
+.write-title::placeholder {
+    color: #a0aec0;
+    font-weight: 500;
+}
+
+.write-category-container {
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.write-category-container label {
+    font-size: 1rem;
+    color: #4a5568;
+    font-weight: 500;
 }
 
 .selectOption {
-    border-radius: 20px;
-    background-color: pink;
-    padding: 4px;
-}
-.selectOption:hover{
-    background-color: black;
-    color: white;
-    transition: 0.8s;
-}
-
-.writeText{
-    border: 0.5px dashed grey;
-    color: #090808;
-    background-color: #f3f3f3;
-    border-radius: 10px;
-    padding: 15px;
-    margin-top: 25px;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background-color: #f8fafc;
+    color: #4a5568;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-.textEditor{
-    height: 20vh;
+.selectOption:hover {
+    background-color: #edf2f7;
+    border-color: #cbd5e0;
+}
+
+.write-description {
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    color: #4a5568;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    font-size: 1rem;
+    resize: vertical;
+    min-height: 100px;
+    transition: all 0.2s ease;
+}
+
+.write-description:focus {
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 1px #3182ce;
+}
+
+.write-description::placeholder {
+    color: #a0aec0;
+}
+
+.editor-wrapper {
+    margin: 2rem 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
     overflow: hidden;
-    margin-top: 20px;
+}
+
+.textEditor {
+    min-height: 300px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #2d3748;
+}
+
+.write-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.publish-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.publish-button:hover {
+    background-color: #2c5282;
+}
+
+.save-draft-button {
+    padding: 0.75rem 1.5rem;
+    background-color: white;
+    color: #4a5568;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.save-draft-button:hover {
+    background-color: #f7fafc;
+    border-color: #cbd5e0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .write-container {
+        padding: 1rem;
+    }
+    
+    .write-overall-container {
+        padding: 1.5rem;
+    }
+    
+    .write-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .write-title {
+        font-size: 1.75rem;
+    }
+    
+    .write-category-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .write-actions {
+        flex-direction: column;
+    }
+    
+    .publish-button, .save-draft-button {
+        width: 100%;
+    }
 }
