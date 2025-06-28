@@ -162,7 +162,7 @@
 .social-links {
   display: flex;
   gap: 1.5rem;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .social-links a {
@@ -210,7 +210,7 @@
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 800px),(min-width: 1280px)  {
   .home-container {
     padding: 1.5rem;
   }
@@ -218,7 +218,7 @@
   .hero-content {
     padding: 2rem;
     text-align: center;
-    margin-top: 35vh;
+    margin-top: 15vh;
     
   }
   
