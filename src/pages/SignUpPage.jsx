@@ -173,7 +173,7 @@ const SignUpPage = () => {
                         </form>
 
                         <p className="login-link">
-                            Already have an account? <a href="/SignInPage">Log in</a>
+                            Already have an account? <a href="/signinpage">Log in</a>
                         </p>
                     </>
                 )}
