@@ -204,7 +204,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
-  font-size: 0.9rem;
+  font-size: 0.6rem;
   color: var(--gray-color);
 }
 

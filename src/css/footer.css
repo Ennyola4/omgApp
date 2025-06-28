@@ -258,4 +258,10 @@
     flex-direction: column;
     gap: 0.5rem;
   }
+
+  .social-icons{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
 }
