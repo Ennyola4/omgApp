@@ -137,7 +137,7 @@ const HomePagePics = () => {
           </motion.button>
         </motion.div>
 
-        {/* <motion.div 
+        <motion.div 
           className="social-links"
           variants={itemVariants}
         >
@@ -146,13 +146,13 @@ const HomePagePics = () => {
           <a href="#" aria-label="Twitter"><BsTwitterX /></a>
           <a href="#" aria-label="LinkedIn"><FaLinkedin /></a>
           <a href="#" aria-label="Instagram"><FaSquareInstagram /></a>
-        </motion.div> */}
+        </motion.div>
       </motion.div>
 
       <div className="scrolling-indicator">
         <motion.div
           animate={{
-            y: [0, 10, 0],
+            y: [0, 20, 0],
           }}
           transition={{
             duration: 1.5,

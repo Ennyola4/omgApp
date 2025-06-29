@@ -189,7 +189,6 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
   color: var(--white);
   border: none;
   padding: 12px 24px;
@@ -197,6 +196,12 @@
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
+  background-color: red;
+  border: 1px solid red;
+}
+
+.view-button:hover{
+  color: red;
 }
 
 .view-button .arrow-icon {
@@ -205,6 +210,7 @@
 
 .view-button:hover .arrow-icon {
   transform: translateX(5px);
+  color: red;
 }
 
 .quick-view {
@@ -219,6 +225,7 @@
 
 .quick-view:hover {
   color: var(--secondary-color);
+  border-radius: 20px;
 }
 
 .cta-section {

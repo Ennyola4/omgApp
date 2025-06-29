@@ -38,7 +38,7 @@
   max-width: 800px;
   width: 100%;
   padding: 2rem;
-  margin-top: 8vh;
+  margin-top: 15vh;
   border-radius: 20px;
   background: var(--card-bg);
   /* backdrop-filter: var(--glass-effect); */
@@ -58,12 +58,12 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-family: cursive;
+  /* font-family: cursive; */
   
 }
 
 .highlight {
-  background: linear-gradient(90deg, var(--primary-color), var(--primary-color));
+  /* background: linear-gradient(90deg, var(--primary-color), var(--primary-color)); */
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -120,12 +120,13 @@
   font-size: 1rem;
   font-weight: 600;
   color: white;
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  /* background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); */
   cursor: pointer;
-  overflow: hidden;
+  /* overflow: hidden; */
   z-index: 1;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  background-color: red;
 }
 
 .login-btn::before {
@@ -135,7 +136,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+  /* background: linear-gradient(45deg, var(--secondary-color), var(--primary-color)); */
   z-index: -1;
   opacity: 0;
   transition: opacity 0.3s ease;

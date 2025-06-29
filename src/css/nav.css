@@ -29,8 +29,8 @@
 }
 
 .navbar.scrolled {
-  height: 70px;
-  background-color: rgba(15, 15, 26, 0.98);
+  height: 80px;
+  background-color: rgba(244, 16, 16, 0.98);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -48,7 +48,7 @@
 .logo-wrapper {
   display: flex;
   align-items: center;
-  z-index: 1001;
+  /* z-index: 1001; */
 }
 
 .logo-container {
@@ -70,11 +70,10 @@
   font-weight: 700;
   font-size: 1rem;
   color: white;
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-  -webkit-background-clip: text;
-  background-clip: text;
+  /* background: linear-gradient(to right, var(--primary-color), var(--secondary-color)); */
+  /* -webkit-background-clip: text; */
+  /* background-clip: text; */
   /* color: transparent; */
-  font-family: fantasy;
 }
 
 /* Desktop Navigation */

@@ -81,7 +81,7 @@ const Blog = () => {
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
-            <span>Scroll</span>
+            <span>Scroll Down</span>
           </motion.div>
         </div>
       </section>
