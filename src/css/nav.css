@@ -11,7 +11,7 @@
 
 /* Base styles */
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -19,7 +19,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
+  background-color: rgb(166, 0, 0);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   z-index: 1000;
@@ -30,7 +30,7 @@
 
 .navbar.scrolled {
   height: 80px;
-  background-color: rgba(244, 16, 16, 0.98);
+  background-color: rgba(203, 0, 0, 0.974);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -149,8 +149,8 @@
   background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
   color: white;
   border: none;
-  padding: 0.6rem 1.5rem;
-  border-radius: 30px;
+  padding: 0.3rem 1rem;
+  border-radius: 90px;
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
@@ -189,7 +189,7 @@
   width: 80%;
   max-width: 350px;
   height: 100%;
-  background-color: var(--dark-bg);
+  background-color: rgba(22, 21, 21, 0.936);
   padding: 2rem;
   overflow-y: auto;
   box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
@@ -198,6 +198,7 @@
 .mobile-search {
   position: relative;
   margin-bottom: 2rem;
+  color: white;
 }
 
 .mobile-search input {
@@ -205,7 +206,7 @@
   padding: 0.8rem 1rem 0.8rem 2.5rem;
   border-radius: 30px;
   border: none;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(151, 151, 151, 0.929);
   color: var(--text-color);
   font-size: 1rem;
 }

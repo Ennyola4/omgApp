@@ -38,7 +38,7 @@
   max-width: 800px;
   width: 100%;
   padding: 2rem;
-  margin-top: 15vh;
+  margin-top: 13vh;
   border-radius: 20px;
   background: var(--card-bg);
   /* backdrop-filter: var(--glass-effect); */
@@ -58,7 +58,6 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  /* font-family: cursive; */
   
 }
 
@@ -126,7 +125,7 @@
   z-index: 1;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
-  background-color: red;
+  background-color: rgb(166, 0, 0);
 }
 
 .login-btn::before {
