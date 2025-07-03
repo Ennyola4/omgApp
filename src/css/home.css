@@ -181,7 +181,7 @@
 /* Scrolling indicator */
 .scrolling-indicator {
   position: absolute;
-  bottom: 4rem;
+  bottom: 5rem;
   left: 50%;
   transform: translateX(-50%);
   font-size: 0.9rem;
