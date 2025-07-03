@@ -12,6 +12,7 @@ import SinglePostPage from './pages/SinglePostPage'
 import ContactUs from './pages/ContactUs'
 import AboutUs from './pages/AboutUs'
 import Write from './pages/Write'
+import MediaServices from './pages/MediaServices'
 
 
 const App = () => {
@@ -30,6 +31,8 @@ const App = () => {
           <Route path='/about' element={<AboutUs />} />
           <Route path='/ContactUs' element={<ContactUs />} />
           <Route path='/write' element={<Write />} />
+          <Route path='/MediaServices' element={<MediaServices/>} />
+
 
         </Routes>
       </Router>
