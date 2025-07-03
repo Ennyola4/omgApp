@@ -10,7 +10,7 @@ import SignUpPage from './pages/SignUpPage'
 import SignInPage from './pages/SignInPage'
 import SinglePostPage from './pages/SinglePostPage'
 import ContactUs from './pages/ContactUs'
-import About from './pages/About'
+import AboutUs from './pages/AboutUs'
 import Write from './pages/Write'
 
 
@@ -27,7 +27,7 @@ const App = () => {
           <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/team' element={<Team />} />
           <Route path='/singlepostpage' element={<SinglePostPage />} />
-          <Route path='/about' element={<About />} />
+          <Route path='/about' element={<AboutUs />} />
           <Route path='/ContactUs' element={<ContactUs />} />
           <Route path='/write' element={<Write />} />
 
