@@ -83,8 +83,8 @@ const Navbar = () => {
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
     { path: "/mediaservices", label: "Services" },
-    { path: "/portfolio", label: "Portfolio" },
-    { path: "/blog", label: "Blog" },
+    // { path: "/portfolio", label: "Portfolio" },
+    // { path: "/blog", label: "Blog" },
     { path: "/contact", label: "Contact" }
   ];
 
@@ -120,7 +120,7 @@ const Navbar = () => {
                 transition={{ duration: 0.5 }}
               />
               <motion.span 
-                className="logo-text"
+                className="logo-texts"
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}

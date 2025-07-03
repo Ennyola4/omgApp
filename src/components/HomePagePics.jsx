@@ -78,7 +78,7 @@ const HomePagePics = () => {
         variants={containerVariants}
       >
         <motion.h1 variants={itemVariants}>
-          Your lens to the <span className="highlight">media world</span>
+          Your lens to the <span className="highlights">Media world</span>
         </motion.h1>
         
         <motion.p variants={itemVariants}>

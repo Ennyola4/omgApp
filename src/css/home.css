@@ -38,11 +38,9 @@
   max-width: 800px;
   width: 100%;
   padding: 2rem;
-  margin-top: 13vh;
-  border-radius: 20px;
+  margin-top: 10vh;
+  border-radius: 50px;
   background: var(--card-bg);
-  /* backdrop-filter: var(--glass-effect); */
-  /* -webkit-backdrop-filter: var(--glass-effect); */
   border: 1px solid rgba(240, 235, 235, 0.1);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
     background: linear-gradient(rgba(16, 16, 16, 0.84), rgba(36, 36, 36, 0.827)), url('../images/imageSix.jpg') no-repeat center center fixed;
@@ -61,11 +59,12 @@
   
 }
 
-.highlight {
-  /* background: linear-gradient(90deg, var(--primary-color), var(--primary-color)); */
+.highlights {
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-color));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  text-decoration: #9c2222;
 }
 
 .hero-content p {
@@ -182,7 +181,7 @@
 /* Scrolling indicator */
 .scrolling-indicator {
   position: absolute;
-  bottom: 2rem;
+  bottom: 4rem;
   left: 50%;
   transform: translateX(-50%);
   font-size: 0.9rem;
