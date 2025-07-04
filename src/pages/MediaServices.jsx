@@ -82,7 +82,7 @@ const MediaServices = () => {
       {/* Hero Section */}
       <section className="ms-hero">
         <div className="ms-hero-content" data-aos="fade-up">
-          <h1 className="ms-hero-title">Premium <span className="ms-highlight">Media Services</span></h1>
+          <h1 className="ms-hero-title">Premium <span className="ms-highlights">Media Services</span></h1>
           <p className="ms-subtitle">Cutting-edge journalism and content solutions for the digital age</p>
         </div>
         <div className="ms-hero-shapes">
@@ -97,7 +97,7 @@ const MediaServices = () => {
       {/* Services Grid */}
       <section className="ms-services-section">
         <div className="ms-container-inner">
-          <h2 className="ms-section-title" data-aos="fade-up">Our <span className="ms-highlight">Services</span></h2>
+          <h2 className="ms-section-title" data-aos="fade-up">Our <span className="ms-highlights">Services</span></h2>
           <p className="ms-section-desc">Comprehensive media solutions tailored to your needs</p>
           
           <div className="ms-grid">
@@ -127,7 +127,7 @@ const MediaServices = () => {
         <div className="ms-container-inner">
           <div className="ms-feature-content">
             <div className="ms-feature-text" data-aos="fade-right">
-              <h2 className="ms-feature-title">Why Our <span className="ms-highlight">Media Services</span> Stand Out</h2>
+              <h2 className="ms-feature-title">Why Our <span className="ms-highlights">Media Services</span> Stand Out</h2>
               <div className="ms-feature-list">
                 {mediaFeatures.map((feature, index) => (
                   <div className="ms-feature-item" key={index}>
@@ -162,7 +162,7 @@ const MediaServices = () => {
       {/* CTA Section */}
       <section className="ms-cta">
         <div className="ms-cta-container" data-aos="fade-up">
-          <h2 className="ms-cta-title">Ready to Elevate Your <span className="ms-highlight">Media Presence</span>?</h2>
+          <h2 className="ms-cta-title">Ready to Elevate Your <span className="ms-highlights">Media Presence</span>?</h2>
           <p className="ms-cta-desc">Partner with us for premium content solutions</p>
           <div className="ms-cta-buttons">
             <button className="ms-cta-btn ms-cta-primary">Get Started</button>

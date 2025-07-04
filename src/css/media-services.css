@@ -1,11 +1,13 @@
 /* Unique Media Services Page Styles */
 :root {
-  --ms-primary: #a60606;
+  --ms-primary: #740202;
   --ms-secondary: #ee5050;
   --ms-accent: #4776E6;
   --ms-dark: #0f0f1a;
   --ms-light: #f8f9fa;
-  --ms-highlight: #121200;
+  --ms-highlights: #121200;
+  
+
 }
 
 .ms-container {
@@ -43,10 +45,11 @@
   line-height: 1.2;
 }
 
-.ms-highlight {
-  color: var(--ms-highlight);
+.ms-highlights {
+  color: var(--ms-highlights);
   position: relative;
   display: inline-block;
+  font-family: cursive;
 }
 
 .ms-highlight::after {
@@ -78,10 +81,10 @@
   position: absolute;
   width: 400px;
   height: 400px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.296);
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  top: -150px;
-  left: -150px;
+  top: -20px;
+  left: -200px;
 }
 
 .ms-shape-circle {
@@ -92,6 +95,8 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   bottom: -300px;
   right: -200px;
+    background: rgba(255, 255, 255, 0.296);
+
 }
 
 /* Diagonal Divider */

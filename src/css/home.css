@@ -59,7 +59,7 @@
   
 }
 
-.highlights {
+.highlightss {
   background: linear-gradient(90deg, var(--primary-color), var(--primary-color));
   -webkit-background-clip: text;
   background-clip: text;
@@ -181,7 +181,7 @@
 /* Scrolling indicator */
 .scrolling-indicator {
   position: absolute;
-  bottom: 5rem;
+  bottom: 4rem;
   left: 50%;
   transform: translateX(-50%);
   font-size: 0.9rem;

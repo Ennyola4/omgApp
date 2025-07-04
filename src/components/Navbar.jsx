@@ -166,7 +166,7 @@ const Navbar = () => {
               <FaSearch />
             </motion.button>
             <motion.button 
-              className="cta-button"
+              className="cta-buttons"
               whileHover={{ scale: 1.05, boxShadow: "0 5px 15px rgba(0,0,0,0.2)" }}
               whileTap={{ scale: 0.95 }}
             >

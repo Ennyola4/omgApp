@@ -52,6 +52,7 @@ const AboutUs = () => {
         instagram: "#"
       }
     },
+    
     {
       id: 3,
       name: "Aisha Johnson",
@@ -75,7 +76,19 @@ const AboutUs = () => {
         linkedin: "#",
         instagram: "#"
       }
-    }
+    },
+      {
+      id: 2,
+      name: "Temitope Ogunleye",
+      role: "Production Manager",
+      bio: "Transforming stories into visual experiences that captivate global audiences.",
+      image: imageTwenty,
+      social: {
+        twitter: "#",
+        linkedin: "#",
+        instagram: "#"
+      }
+    },
   ];
 
   return (
@@ -83,7 +96,7 @@ const AboutUs = () => {
       {/* Geometric Hero */}
       <section className="neo-hero">
         <div className="neo-hero-content" data-aos="fade-up">
-          <h1>Redefining <span className="highlight">Media</span> for the Digital Age</h1>
+          <h1>Redefining <span className="highlights">Media</span> for the Digital Age</h1>
           <div className="neo-hero-stats">
             <div className="stat-pill" data-aos="fade-up" data-aos-delay="200">
               <FaGlobeAmericas className="stat-icon" />
@@ -110,7 +123,7 @@ const AboutUs = () => {
 
       {/* Core Values - Circular Layout */}
       <section className="neo-values">
-        <h2 className="neo-section-title" data-aos="fade-up">Our <span className="highlight">Core</span> Principles</h2>
+        <h2 className="neo-section-title" data-aos="fade-up">Our <span className="highlights">Core</span> Principles</h2>
         <div className="neo-values-circle">
           <div className="value-center" data-aos="zoom-in">
             <FaQuoteLeft className="quote-icon" />
@@ -142,7 +155,7 @@ const AboutUs = () => {
 
       {/* Timeline Story */}
       <section className="neo-timeline">
-        <h2 className="neo-section-title" data-aos="fade-up">Our <span className="highlight">Evolution</span></h2>
+        <h2 className="neo-section-title" data-aos="fade-up">Our <span className="highlights">Evolution</span></h2>
         <div className="timeline-container">
           <div className="timeline-line"></div>
           <div className="timeline-item" data-aos="fade-right">
@@ -180,7 +193,7 @@ const AboutUs = () => {
 
       {/* Hexagonal Team Grid */}
       <section className="neo-team">
-        <h2 className="neo-section-title" data-aos="fade-up">Meet The <span className="highlight">Visionaries</span></h2>
+        <h2 className="neo-section-title" data-aos="fade-up">Meet The <span className="highlights">Visionaries</span></h2>
         <div className="neo-team-grid">
           {teamMembers.map((member, index) => (
             <div 
@@ -204,6 +217,8 @@ const AboutUs = () => {
 
               
             </div>
+
+            
           ))}
           <div className="team-hexagon hex-center" data-aos="zoom-in">
             <div className="hexagon-content">
@@ -233,7 +248,7 @@ const AboutUs = () => {
       {/* Interactive CTA */}
       <section className="neo-cta">
         <div className="cta-container" data-aos="fade-up">
-          <h2>Ready to Experience <span className="highlight">Better</span> Journalism?</h2>
+          <h2>Ready to Experience <span className="highlights">Better</span> Journalism?</h2>
           <div className="cta-buttons">
             <button className="neo-button primary">Subscribe Now</button>
             <button className="neo-button secondary">Contact Us</button>

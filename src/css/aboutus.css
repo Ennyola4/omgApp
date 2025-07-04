@@ -1,7 +1,7 @@
 /* Neo Modern Design System */
 :root {
-  --primary: #a60606;
-  --secondary: #ee5050;
+  --primary: #740202;
+  --secondary: rgba(224, 66, 66, 0.787);
   --accent: #4776E6;
   --dark: #fd0000;
   --light: #f8f9fa;
@@ -17,7 +17,7 @@
 
 /* Geometric Hero */
 .neo-hero {
-  height: 70vh;
+  height: 40vh;
   min-height: 600px;
   position: relative;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -31,32 +31,32 @@
   position: relative;
   z-index: 2;
   text-align: center;
-  padding: 0 20px;
+  /* padding: 0 20px; */
   max-width: 800px;
 }
 
 .neo-hero h1 {
   font-size: 4rem;
-  font-weight: 800;
+  font-weight: 900;
   color: white;
   margin-bottom: 40px;
   line-height: 1.2;
 }
 
-.highlight {
+.highlights {
   color: var(--highlight);
   position: relative;
-  display: inline-block;
+  font-family: cursive;
 }
 
-.highlight::after {
+.highlights::after {
   content: '';
   position: absolute;
   bottom: 5px;
   left: 0;
   width: 100%;
-  height: 10px;
-  background: rgba(255, 154, 0, 0.3);
+  height: 5px;
+  background: rgba(255, 0, 0, 0);
   z-index: -1;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .stat-pill {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(14, 0, 0, 0.078);
   backdrop-filter: blur(5px);
   padding: 12px 25px;
   border-radius: 50px;
@@ -78,6 +78,8 @@
   color: white;
   font-weight: 500;
   transition: all 0.3s ease;
+  border: 0.3px solid white;
+
 }
 
 .stat-pill:hover {
@@ -87,6 +89,7 @@
 
 .stat-icon {
   font-size: 1.2rem;
+
 }
 
 .neo-hero-shapes {
@@ -102,9 +105,9 @@
   position: absolute;
   width: 400px;
   height: 400px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.286);
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  top: -150px;
+  top: -300px;
   left: -150px;
 }
 
@@ -113,9 +116,11 @@
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.214);
   bottom: -300px;
   right: -200px;
+  background: rgba(255, 255, 255, 0.242);
+
 }
 
 /* Diagonal Divider */
@@ -529,11 +534,11 @@
   .neo-hero h1 {
     font-size: 3.5rem;
   }
-  
+
   .neo-team-grid {
     height: 600px;
   }
-  
+
   .team-hexagon {
     width: 220px;
     height: 254px;
@@ -544,28 +549,28 @@
   .neo-values-circle {
     height: 700px;
   }
-  
+
   .value-orb {
     position: static;
     margin: 20px auto;
     transform: none !important;
   }
-  
+
   .timeline-line {
     left: 40px;
   }
-  
+
   .timeline-item {
     width: calc(100% - 90px);
     left: 90px !important;
   }
-  
+
   .timeline-item:nth-child(odd) .timeline-date,
   .timeline-item:nth-child(even) .timeline-date {
     left: -130px;
     right: auto;
   }
-  
+
   .neo-team-grid {
     height: auto;
     position: static;
@@ -574,13 +579,13 @@
     gap: 40px;
     padding: 40px 0;
   }
-  
+
   .team-hexagon {
     position: static;
     transform: none !important;
     margin: 0 auto;
   }
-  
+
   .hex-center {
     position: static;
     transform: none;
@@ -592,16 +597,16 @@
   .neo-hero h1 {
     font-size: 2.5rem;
   }
-  
+
   .neo-section-title {
     font-size: 2.2rem;
   }
-  
+
   .stat-pill {
     padding: 10px 15px;
     font-size: 0.9rem;
   }
-  
+
   .testimonial-content blockquote {
     font-size: 1.4rem;
   }
@@ -611,22 +616,27 @@
   .neo-hero h1 {
     font-size: 2rem;
   }
-  
+
+  .neo-team-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
   .neo-hero-stats {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .neo-section-title {
     font-size: 1.8rem;
     margin-bottom: 50px;
   }
-  
+
   .cta-buttons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .neo-button {
     width: 100%;
     max-width: 300px;
