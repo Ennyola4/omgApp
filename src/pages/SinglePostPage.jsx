@@ -298,7 +298,7 @@ const SinglePostPage = () => {
             ></textarea>
             <button 
               type="submit" 
-              className="comment-submit"
+              className="comment-submits"
               disabled={!comment.trim()}
               data-aos="fade-up"
             >
@@ -308,14 +308,14 @@ const SinglePostPage = () => {
         </div>
       </div>
 
-      <div className="newsletter-signup" data-aos="fade-up">
+      {/* <div className="newsletter-signup" data-aos="fade-up">
         <h3>Want more content like this?</h3>
         <p>Subscribe to our newsletter for weekly podcasting tips and resources</p>
         <form className="newsletter-form">
           <input type="email" placeholder="Your email address" required />
           <button type="submit">Subscribe</button>
         </form>
-      </div>
+      </div> */}
     </div>
   );
 }

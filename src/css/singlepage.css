@@ -435,7 +435,7 @@ blockquote {
   border-color: #ff4757;
 }
 
-.comment-submit {
+.comment-submits {
   padding: 0.8em 2em;
   font-weight: 500;
   font-size: 1rem;
@@ -447,6 +447,8 @@ blockquote {
   transition: all 0.3s ease;
   margin-top: 1rem;
   float: right;
+  margin-bottom: 2rem;
+  min-width: 50%;
 }
 
 .comment-submit:hover {

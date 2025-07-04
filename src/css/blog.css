@@ -555,7 +555,7 @@ body {
   }
   
   .post-meta {
-    flex-direction: column;
+    flex-direction: flex;
     gap: 5px;
   }
 }
