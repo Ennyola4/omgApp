@@ -46,7 +46,7 @@
 .highlights {
   color: var(--highlight);
   position: relative;
-  font-family: cursive;
+  font-weight: 900;
 }
 
 .highlights::after {
