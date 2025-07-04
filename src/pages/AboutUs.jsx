@@ -247,10 +247,10 @@ const AboutUs = () => {
 
       {/* Interactive CTA */}
       <section className="neo-cta">
-        <div className="cta-container" data-aos="fade-up">
+        <div className="cta-containers" data-aos="fade-up">
           <h2>Ready to Experience <span className="highlights">Better</span> Journalism?</h2>
-          <div className="cta-buttons">
-            <button className="neo-button primary">Subscribe Now</button>
+          <div className="cta-buttonss">
+            <button className="neo-button secondary">Subscribe Now</button>
             <button className="neo-button secondary">Contact Us</button>
           </div>
         </div>

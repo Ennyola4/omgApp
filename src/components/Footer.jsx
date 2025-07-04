@@ -92,7 +92,7 @@ const Footer = () => {
           <motion.div className="footer-col" variants={itemVariants}>
             <h4>Newsletter</h4>
             <p>Subscribe to our newsletter for the latest updates.</p>
-            <form className="newsletter-form">
+            {/* <form className="newsletter-form">
               <input 
                 type="email" 
                 placeholder="Your Email" 
@@ -107,7 +107,7 @@ const Footer = () => {
               >
                 Subscribe
               </motion.button>
-            </form>
+            </form> */}
             <div className="social-icons">
               <a href="#" aria-label="Facebook"><FaFacebook /></a>
               <a href="#" aria-label="Twitter"><FaTwitter /></a>

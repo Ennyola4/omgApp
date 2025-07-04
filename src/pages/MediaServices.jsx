@@ -165,7 +165,7 @@ const MediaServices = () => {
           <h2 className="ms-cta-title">Ready to Elevate Your <span className="ms-highlights">Media Presence</span>?</h2>
           <p className="ms-cta-desc">Partner with us for premium content solutions</p>
           <div className="ms-cta-buttons">
-            <button className="ms-cta-btn ms-cta-primary">Get Started</button>
+            <button className="ms-cta-btn ms-cta-secondary">Get Started</button>
             <button className="ms-cta-btn ms-cta-secondary">Contact Our Team</button>
           </div>
         </div>
