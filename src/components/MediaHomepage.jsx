@@ -138,13 +138,13 @@ const MediaHomepage = () => {
 
       <motion.div 
         className="floating-image-2"
-        initial={{ y: -50, x: 50, rotate: 5 }}
+        initial={{ y: -50, x: -50, rotate: -5 }}
         animate={{ 
-          y: [0, -30, 0],
-          rotate: [5, -2, 5]
+          y: [0, -20, 0],
+          rotate: [-15, 5, -15]
         }}
         transition={{
-          duration: 20,
+          duration: 8,
           repeat: Infinity,
           ease: "easeInOut"
         }}
