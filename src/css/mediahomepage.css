@@ -67,12 +67,12 @@ body {
 
 .floating-image-1 {
   top: 10%;
-  left: 5%;
+  left: 1%;
 }
 
 .floating-image-2 {
   bottom: 15%;
-  right: 5%;
+  right: -80px;
 }
 
 .floating-image-1 img,

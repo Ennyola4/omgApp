@@ -8,7 +8,7 @@ import { BsTwitterX } from "react-icons/bs";
 import { FaLinkedin, FaRegCalendarAlt } from "react-icons/fa";
 import { FaSquareInstagram, FaRegClock } from "react-icons/fa6";
 import imageThirteen from "../images/imageThirteen.jpg";
-import imageFourteen from "../images/imageFourteen.jpg";
+import imageTwo from "../images/imageTwo.jpg";
 import imageSix from "../images/imageSix.jpg";
 import '../css/mediahomepage.css';
 
@@ -133,7 +133,7 @@ const MediaHomepage = () => {
           ease: "easeInOut"
         }}
       >
-        <img src={imageFourteen} alt="Media production" />
+        <img src={imageTwo} alt="Media production" />
       </motion.div>
 
       <motion.div 
@@ -141,7 +141,7 @@ const MediaHomepage = () => {
         initial={{ y: -50, x: -50, rotate: -5 }}
         animate={{ 
           y: [0, -20, 0],
-          rotate: [-15, 5, -15]
+          rotate: [15, 5, 15]
         }}
         transition={{
           duration: 8,
