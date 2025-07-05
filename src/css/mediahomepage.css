@@ -219,7 +219,7 @@ header {
 
 .feature-icon {
   font-size: 2rem;
-  color: var(--primary);
+  color: var(--text-light);
   margin-bottom: 1rem;
  
 }
