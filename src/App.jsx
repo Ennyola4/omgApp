@@ -9,10 +9,10 @@ import Footer from './components/Footer'
 import SignUpPage from './pages/SignUpPage'
 import SignInPage from './pages/SignInPage'
 import SinglePostPage from './pages/SinglePostPage'
-import ContactUs from './pages/ContactUs'
 import AboutUs from './pages/AboutUs'
 import Write from './pages/Write'
 import MediaServices from './pages/MediaServices'
+import Contact from './components/Contact'
 
 
 const App = () => {
@@ -25,15 +25,12 @@ const App = () => {
           <Route path='/signuppage' element={<SignUpPage />} />
           <Route path='/signinpage' element={<SignInPage />} />
           <Route path='/blog' element={<Blog />} />
-          <Route path='/contact-us' element={<ContactUs />} />
+          <Route path='/contact' element={<Contact/>} />
           <Route path='/team' element={<Team />} />
           <Route path='/singlepostpage' element={<SinglePostPage />} />
           <Route path='/about' element={<AboutUs />} />
-          <Route path='/ContactUs' element={<ContactUs />} />
           <Route path='/write' element={<Write />} />
-          <Route path='/MediaServices' element={<MediaServices/>} />
-
-
+          <Route path='/MediaServices' element={<MediaServices />} />
         </Routes>
       </Router>
       <Footer />

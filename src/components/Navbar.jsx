@@ -85,7 +85,8 @@ const Navbar = () => {
     { path: "/mediaservices", label: "Services" },
     // { path: "/portfolio", label: "Portfolio" },
     // { path: "/blog", label: "Blog" },
-    { path: "/contact", label: "Contact" }
+    { path: "/mediacontactpage", label: "Contact Us" }
+    
   ];
 
   const socialIcons = [
