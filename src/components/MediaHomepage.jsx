@@ -152,6 +152,7 @@ const MediaHomepage = () => {
         <img src={imageSix} alt="News team" />
       </motion.div>
 
+       
       {/* Main Content */}
       <motion.div 
         className="hero-container"
