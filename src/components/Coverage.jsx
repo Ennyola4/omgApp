@@ -235,7 +235,7 @@ const Coverage = () => {
                   {filters.map(filter => (
                     <button
                       key={`mobile-${filter}`}
-                      className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
+                      className={`filter-btn ${activeFilter === filter ? 'hidden' : ''}`}
                       onClick={() => {
                         setActiveFilter(filter);
                         setShowFilters(false);

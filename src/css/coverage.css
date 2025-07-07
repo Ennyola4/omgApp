@@ -568,7 +568,7 @@
 
 @media (max-width: 576px) {
   .parallax-hero {
-    min-height: 500px;
+    min-height: 300px;
   }
   
   .hero-title {
