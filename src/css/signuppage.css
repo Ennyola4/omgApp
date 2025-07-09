@@ -1,17 +1,15 @@
-/* SignupForm.css */
 .signup-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #ff0000 0%, #4a010143 100%);
     padding: 20px;
     background: linear-gradient(rgba(0, 0, 0, 0.488), rgba(0, 0, 0, 0.344)), 
-              url('.././images/imageEighteen.jpg')no-repeat fixed center center;
+              url('.././images/imageEighteen.jpg') no-repeat fixed center center;
     background-size: cover;
-  }
-  
-  .signup-card {
+}
+
+.signup-card {
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     padding: 40px;
@@ -22,72 +20,70 @@
     opacity: 1;
     backdrop-filter: blur(30px);
     border: 1px solid white;
+    color: white;
+}
 
-
-  }
-  
-  .signup-card.success-animation {
+.signup-card.success-animation {
     transform: translateY(-20px);
     opacity: 0.9;
-  }
-  
-  h2 {
-    color: #ffffff;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  .subtext {
-    color: #ffffff;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .input-group {
-    position: relative;
+}
+
+.global-error {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #ff6b6b;
+    padding: 12px;
+    border-radius: 8px;
     margin-bottom: 20px;
-  }
-  
-  .input-group.error {
-    margin-bottom: 30px;
-  }
-  
-  .input-icon {
+    text-align: center;
+    border: 1px solid #ff6b6b;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-icon {
     position: absolute;
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    color: #999;
-  }
-  
-  input {
+    color: #ccc;
+}
+
+input {
     width: 100%;
     padding: 12px 12px 12px 40px;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
     font-size: 16px;
     transition: all 0.3s;
-  }
-  
-  input:focus {
-    border-color: #667eea;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus {
+    border-color: #ff0000;
     outline: none;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
-  }
-  
-  .input-group.error input {
-    border-color: #ff3860;
-  }
-  
-  .error-message {
-    color: #ff3860;
-    font-size: 14px;
-    position: absolute;
-    bottom: -20px;
-    left: 0;
-  }
-  
-  .isbtn {
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.2);
+}
+
+.input-group.error input {
+    border-color: #ff6b6b;
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-size: 13px;
+    margin-top: 5px;
+    display: block;
+}
+
+.isbtn {
     width: 100%;
     padding: 14px;
     background: linear-gradient(to right, #ff0000, #b10000);
@@ -99,98 +95,86 @@
     cursor: pointer;
     transition: all 0.3s;
     margin-top: 10px;
-  }
-  
-  button:hover {
+}
+
+.isbtn:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(133, 0, 0, 0.4);
-  }
-  
-  button:disabled {
+}
+
+.isbtn:disabled {
     background: #ccc;
     transform: none;
     box-shadow: none;
     cursor: not-allowed;
-  }
-  
-  .spinner {
+}
+
+.spinner {
     animation: spin 1s linear infinite;
     margin-right: 8px;
-    color: #333;
-  }
-  
-  @keyframes spin {
+}
+
+@keyframes spin {
     to { transform: rotate(360deg); }
-  }
-  
-  .login-link {
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.divider::before {
+    margin-right: 10px;
+}
+
+.divider::after {
+    margin-left: 10px;
+}
+
+.login-link {
     text-align: center;
     margin-top: 20px;
-    color: #666;
-  }
-  
-  .login-link a {
-    color: #faf7f7;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.login-link a {
+    color: white;
     text-decoration: none;
     font-weight: 600;
-  }
-  
-  .success-message {
+    transition: all 0.3s;
+}
+
+.login-link a:hover {
+    color: #ff6b6b;
+}
+
+.success-message {
     text-align: center;
     padding: 20px;
-    color: white;
-  }
-  
-  .success-message h2 {
-    color: white;
+}
+
+.success-message h2 {
     margin-bottom: 10px;
-  }
-  
-  .loading-bar {
+}
+
+.loading-bar {
     height: 4px;
     background: linear-gradient(to right, #404040, #ffffff);
     width: 0%;
-    margin-top: 30px;
+    margin: 20px auto 0;
     border-radius: 2px;
     animation: loading 1.5s forwards;
-  }
-  
-  @keyframes loading {
+}
+
+@keyframes loading {
     to { width: 100%; }
-  }
-
-  .social-login {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 25px;
-  }
-  
-  .social-login button {
-    flex: 1;
-    padding: 12px;
-    border: 1px solid #ecf0f1;
-    border-radius: 8px;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  
-  .social-login button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  }
-  
-  .google-btn {
-    color: #DB4437;
-    border-color: #DB4437 !important;
-  }
-
-  .google-btn:hover{
-    background-color: red;
-    color: white;
-  }
+}

@@ -32,8 +32,9 @@ const App = () => {
           <Route path='/write' element={<Write />} />
           <Route path='/MediaServices' element={<MediaServices />} />
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
+      
     </div>
   )
 }

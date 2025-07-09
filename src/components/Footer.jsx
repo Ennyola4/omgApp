@@ -1,12 +1,17 @@
 import { motion } from 'framer-motion';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
 import { MdEmail, MdLocationOn, MdPhone } from 'react-icons/md';
+import { useLocation } from 'react-router-dom';
 import '../css/footer.css';
 
-
 const Footer = () => {
+  const location = useLocation();
   const currentYear = new Date().getFullYear();
   
+  // Define hidden routes
+  const hiddenRoutes = ['/signinpage', '/signuppage'];
+  const shouldHideFooter = hiddenRoutes.includes(location.pathname.toLowerCase());
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -31,6 +36,10 @@ const Footer = () => {
       }
     }
   };
+
+  if (shouldHideFooter) {
+    return null;
+  }
 
   return (
     <motion.footer 
@@ -92,22 +101,6 @@ const Footer = () => {
           <motion.div className="footer-col" variants={itemVariants}>
             <h4>Newsletter</h4>
             <p>Subscribe to our newsletter for the latest updates.</p>
-            {/* <form className="newsletter-form">
-              <input 
-                type="email" 
-                placeholder="Your Email" 
-                required 
-                className="newsletter-input"
-              />
-              <motion.button 
-                type="submit"
-                className="newsletter-button"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Subscribe
-              </motion.button>
-            </form> */}
             <div className="social-icons">
               <a href="#" aria-label="Facebook"><FaFacebook /></a>
               <a href="#" aria-label="Twitter"><FaTwitter /></a>

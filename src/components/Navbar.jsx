@@ -6,15 +6,20 @@ import { MdEmail } from 'react-icons/md';
 import { BsTwitterX } from 'react-icons/bs';
 import { TfiYoutube } from 'react-icons/tfi';
 import { FaLinkedin, FaInstagram } from 'react-icons/fa';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import imageSixteen from '../images/imageSixteen.jpg';
 import '../css/nav.css';
 
 const Navbar = () => {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+
+  // Define hidden routes
+  const hiddenRoutes = ['/signinpage', '/signuppage'];
+  const shouldHideNavbar = hiddenRoutes.includes(location.pathname.toLowerCase());
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -37,6 +42,17 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1024) {
+        closeMobileMenu();
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
@@ -97,6 +113,10 @@ const Navbar = () => {
     { icon: <TfiYoutube />, url: "#" },
     { icon: <MdEmail />, url: "mailto:contact@ovationmedia.com" }
   ];
+
+    if (shouldHideNavbar) {
+    return null;
+  }
 
   return (
     <motion.nav 

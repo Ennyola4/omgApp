@@ -42,7 +42,13 @@ const MediaHomepage = () => {
       title: "Breaking News",
       description: "Real-time updates worldwide",
       icon: <FaArrowRight />
+    },
+    {
+      title: "Breaking News",
+      description: "Real-time updates worldwide",
+      icon: <FaArrowRight />
     }
+    
   ];
 
   useEffect(() => {
@@ -221,7 +227,7 @@ const MediaHomepage = () => {
               onClick={handleSignUpClick}
               whileHover={{ 
                 scale: 1.05,
-                boxShadow: "0 5px 15px rgba(226, 10, 10, 0.4)"
+                boxShadow: "0 5px 15px rgba(255, 0, 0, 0.82)"
               }}
               whileTap={{ scale: 0.95 }}
             >

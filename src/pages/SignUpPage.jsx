@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaUser, FaEnvelope, FaLock, FaSpinner,  } from 'react-icons/fa';
-import '../css/signuppage.css'
-import OAuth from '../components/Oauth';
-
+import { FaUser, FaEnvelope, FaLock, FaSpinner } from 'react-icons/fa';
+import OAuth from '../components/OAuth';
+import '../css/signuppage.css';
 
 const SignUpPage = () => {
     const navigate = useNavigate();
@@ -11,82 +10,90 @@ const SignUpPage = () => {
         username: '',
         email: '',
         password: '',
-        // confirmPassword: ''
     });
-    const [errors, setErrors] = useState({});
+    const [error, setError] = useState(null);
+    const [fieldErrors, setFieldErrors] = useState({});
     const [isLoading, setIsLoading] = useState(false);
     const [success, setSuccess] = useState(false);
 
-    const validate = () => {
-        const newErrors = {};
-        if (!formData.username.trim()) newErrors.username = 'Username is required';
-        if (!/^\S+@\S+\.\S+$/.test(formData.email)) newErrors.email = 'Email is invalid';
-        if (formData.password.length < 6) newErrors.password = 'Password must be at least 6 characters';
-        // if (formData.password !== formData.confirmPassword) newErrors.confirmPassword = 'Passwords do not match';
+    const validateForm = () => {
+        const errors = {};
+        let isValid = true;
 
-        setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
+        if (!formData.username.trim()) {
+            errors.username = 'Username is required';
+            isValid = false;
+        } else if (formData.username.length < 3) {
+            errors.username = 'Username must be at least 3 characters';
+            isValid = false;
+        }
+
+        if (!formData.email.trim()) {
+            errors.email = 'Email is required';
+            isValid = false;
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            errors.email = 'Please enter a valid email';
+            isValid = false;
+        }
+
+        if (!formData.password) {
+            errors.password = 'Password is required';
+            isValid = false;
+        } else if (formData.password.length < 8) {
+            errors.password = 'Password must be at least 8 characters';
+            isValid = false;
+        }
+
+        setFieldErrors(errors);
+        return isValid;
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        
-        // Clear previous errors
-        setErrors("");
-        
-        // Frontend validation
-        if (!formData.username || !formData.email || !formData.password) {
-          return setErrors("Please fill out all fields!");
-        }
-      
-        // Email format validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(formData.email)) {
-          return setErrors("Please enter a valid email address");
-        }
-      
-        // Password length validation
-        if (formData.password.length < 8) {
-          return setErrors("Password must be at least 8 characters long");
-        }
-      
+        setError(null);
+
+        if (!validateForm()) return;
+
         setIsLoading(true);
-      
+
         try {
-          const res = await fetch("http://localhost:4050/api/auth/signup", {
-            method: "POST",
-            headers: { 
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              username: formData.username.trim(),
-              email: formData.email.trim().toLowerCase(),
-              password: formData.password
-            })
-          });
-      
-          const data = await res.json();
-      
-          if (!res.ok) {
-            // Handle backend validation errors
-            throw new Error(data.message || "Signup failed");
-          }
-      
-          // Success case
-          setSuccess(true);
-          setTimeout(() => navigate('/SignInPage'), 2000);
-          
-        } catch (error) {
-          setErrors(error.message || "Error during signup");
-          console.error("Signup error:", error);
+            const res = await fetch("http://localhost:5008/api/auth/register", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: formData.username.trim(),
+                    email: formData.email.trim().toLowerCase(),
+                    password: formData.password
+                })
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                throw new Error(data.message || "Registration failed. Please try again.");
+            }
+
+            setSuccess(true);
+            setTimeout(() => navigate('/SignInPage'), 3000);
+            
+        } catch (err) {
+            setError(err.message || "An unexpected error occurred");
+            console.error("Signup error:", err);
         } finally {
-          setIsLoading(false);
+            setIsLoading(false);
         }
-      };
+    };
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
+        
+        // Clear field-specific error when user types
+        if (fieldErrors[name]) {
+            setFieldErrors(prev => ({ ...prev, [name]: '' }));
+        }
     };
 
     return (
@@ -96,27 +103,37 @@ const SignUpPage = () => {
                     <div className="success-message">
                         <h2>🎉 Welcome aboard!</h2>
                         <p>Your account has been created successfully</p>
+                        <p>Redirecting to login...</p>
                         <div className="loading-bar"></div>
                     </div>
                 ) : (
                     <>
-                        <h2 className='text-white'>Create Your Account</h2>
+                        <h2>Create Your Account</h2>
                         <p className="subtext">Join our community today</p>
 
-                        <form onSubmit={handleSubmit}>
-                            <div className={`input-group ${errors.username ? 'error' : ''}`}>
+                        {error && (
+                            <div className="global-error">
+                                {error}
+                            </div>
+                        )}
+
+                        <form onSubmit={handleSubmit} noValidate>
+                            <div className={`input-group ${fieldErrors.username ? 'error' : ''}`}>
                                 <FaUser className="input-icon" />
                                 <input
                                     type="text"
                                     name="username"
-                                    placeholder="Username"
+                                    placeholder="Username (min 3 characters)"
                                     value={formData.username}
                                     onChange={handleChange}
+                                    required
                                 />
-                                {errors.username && <span className="error-message">{errors.username}</span>}
+                                {fieldErrors.username && (
+                                    <span className="error-message">{fieldErrors.username}</span>
+                                )}
                             </div>
 
-                            <div className={`input-group ${errors.email ? 'error' : ''}`}>
+                            <div className={`input-group ${fieldErrors.email ? 'error' : ''}`}>
                                 <FaEnvelope className="input-icon" />
                                 <input
                                     type="email"
@@ -124,37 +141,29 @@ const SignUpPage = () => {
                                     placeholder="Email"
                                     value={formData.email}
                                     onChange={handleChange}
+                                    required
                                 />
-                                {errors.email && <span className="error-message">{errors.email}</span>}
+                                {fieldErrors.email && (
+                                    <span className="error-message">{fieldErrors.email}</span>
+                                )}
                             </div>
 
-                            <div className={`input-group ${errors.password ? 'error' : ''}`}>
+                            <div className={`input-group ${fieldErrors.password ? 'error' : ''}`}>
                                 <FaLock className="input-icon" />
                                 <input
                                     type="password"
                                     name="password"
-                                    placeholder="Password"
+                                    placeholder="Password (min 8 characters)"
                                     value={formData.password}
                                     onChange={handleChange}
+                                    required
                                 />
-                                {errors.password && <span className="error-message">{errors.password}</span>}
+                                {fieldErrors.password && (
+                                    <span className="error-message">{fieldErrors.password}</span>
+                                )}
                             </div>
 
-                            {/* <div className={`input-group ${errors.confirmPassword ? 'error' : ''}`}>
-                                <FaLock className="input-icon" />
-                                <input
-                                    type="password"
-                                    name="confirmPassword"
-                                    placeholder="Confirm Password"
-                                    value={formData.confirmPassword}
-                                    onChange={handleChange}
-                                />
-                                {errors.confirmPassword && (
-                                    <span className="error-message">{errors.confirmPassword}</span>
-                                )}
-                            </div> */}
-
-                            <button className='isbtn' type="submit" disabled={isLoading}>
+                            <button type="submit" disabled={isLoading} className="isbtn">
                                 {isLoading ? (
                                     <>
                                         <FaSpinner className="spinner" />
@@ -164,13 +173,13 @@ const SignUpPage = () => {
                                     'Sign Up'
                                 )}
                             </button>
-                            <div className="divider">
-                                <span>or signup with</span>
-                            </div>
-
-
-                           <OAuth/>
                         </form>
+
+                        <div className="divider">
+                            <span>or sign up with</span>
+                        </div>
+
+                        <OAuth />
 
                         <p className="login-link">
                             Already have an account? <a href="/signinpage">Log in</a>
