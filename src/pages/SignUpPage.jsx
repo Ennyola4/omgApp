@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaUser, FaEnvelope, FaLock, FaSpinner } from 'react-icons/fa';
-import OAuth from '../components/OAuth';
 import '../css/signuppage.css';
 
 const SignUpPage = () => {
@@ -179,7 +178,6 @@ const SignUpPage = () => {
                             <span>or sign up with</span>
                         </div>
 
-                        <OAuth />
 
                         <p className="login-link">
                             Already have an account? <a href="/signinpage">Log in</a>
