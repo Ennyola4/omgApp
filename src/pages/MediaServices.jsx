@@ -82,7 +82,7 @@ const MediaServices = () => {
       {/* Hero Section */}
       <section className="ms-hero">
         <div className="ms-hero-content" data-aos="fade-up">
-          <h1 className="ms-hero-title">Premium <span className="ms-highlights">Media Services</span></h1>
+          <h1 className="ms-hero-title">Premium <span className="ms-highlightss">Media Services</span></h1>
           <p className="ms-subtitle">Cutting-edge journalism and content solutions for the digital age</p>
         </div>
         <div className="ms-hero-shapes">
@@ -162,7 +162,7 @@ const MediaServices = () => {
       {/* CTA Section */}
       <section className="ms-cta">
         <div className="ms-cta-container" data-aos="fade-up">
-          <h2 className="ms-cta-title">Ready to Elevate Your <span className="ms-highlights">Media Presence</span>?</h2>
+          <h2 className="ms-cta-title">Ready to Elevate Your <span className="ms-highlightss">Media Presence</span>?</h2>
           <p className="ms-cta-desc">Partner with us for premium content solutions</p>
           <div className="ms-cta-buttons">
             <button className="ms-cta-btn ms-cta-secondary">Get Started</button>

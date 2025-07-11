@@ -46,11 +46,17 @@
 }
 
 .ms-highlights {
-  color: var(--ms-highlights);
+  color: var(--ms-secondary);
   position: relative;
   display: inline-block;
   font-weight: 900;
 }
+
+.ms-highlightss{
+  color: var(--ms-dark);
+}
+
+
 
 .ms-highlight::after {
   content: '';
