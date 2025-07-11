@@ -130,22 +130,22 @@ const AboutUs = () => {
             <p>Truth Above All</p>
           </div>
           <div className="value-orb" data-aos="fade-up" data-aos-delay="100" style={{ top: '20%', left: '10%' }}>
-            <FaChessQueen className="value-icon" />
+            <FaChessQueen className="value-icons" />
             <h3>Integrity</h3>
             <p>Unshakable ethical foundation</p>
           </div>
           <div className="value-orb" data-aos="fade-up" data-aos-delay="200" style={{ top: '10%', right: '20%' }}>
-            <FaLightbulb className="value-icon" />
+            <FaLightbulb className="value-icons" />
             <h3>Innovation</h3>
             <p>Pushing boundaries daily</p>
           </div>
           <div className="value-orb" data-aos="fade-up" data-aos-delay="300" style={{ bottom: '15%', left: '15%' }}>
-            <FaUsers className="value-icon" />
+            <FaUsers className="value-icons" />
             <h3>Community</h3>
             <p>Journalism that serves</p>
           </div>
           <div className="value-orb" data-aos="fade-up" data-aos-delay="400" style={{ bottom: '20%', right: '10%' }}>
-            <FaGlobeAmericas className="value-icon" />
+            <FaGlobeAmericas className="value-icons" />
             <h3>Impact</h3>
             <p>Stories that change lives</p>
           </div>

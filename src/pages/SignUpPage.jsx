@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaUser, FaEnvelope, FaLock, FaSpinner } from 'react-icons/fa';
 import '../css/signuppage.css';
+import Oauth from '../components/Oauth'
 
 const SignUpPage = () => {
     const navigate = useNavigate();
@@ -56,7 +57,7 @@ const SignUpPage = () => {
         setIsLoading(true);
 
         try {
-            const res = await fetch("https://localhost:5008/api/auth/register", {
+            const res = await fetch("http://localhost:5008/api/auth/register", {
                 method: "POST",
                 headers: { 
                     'Content-Type': 'application/json',
@@ -178,7 +179,7 @@ const SignUpPage = () => {
                             <span>or sign up with</span>
                         </div>
 
-
+                        <Oauth/>
                         <p className="login-link">
                             Already have an account? <a href="/signinpage">Log in</a>
                         </p>
