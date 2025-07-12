@@ -40,7 +40,6 @@ body {
   background-color: var(--bg-scrolled);
   box-shadow: var(--shadow);
   padding: 0.5rem 2rem;
-  position: sticky;
     backdrop-filter: blur(15px);
 
 }
