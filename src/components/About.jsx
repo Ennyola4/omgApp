@@ -7,6 +7,14 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../css/about.css';
+import imageFourteen from '../images/imageFourteen.jpg';
+import imageOne from '../images/imageOne.jpg';
+import imageTwenty from '../images/imageTwenty.jpg';
+import imageTwelve from '../images/imageTwelve.jpg';
+
+
+
+
 
 
 
@@ -41,30 +49,30 @@ const About = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Alex Johnson",
-      role: "Creative Director",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+      name: "Temitope Pgunleye",
+      role: "Production Manager",
+      image: imageTwenty,
       bio: "Visionary leader with 15+ years in media innovation."
     },
     {
       id: 2,
-      name: "Maria Garcia",
-      role: "Head of Production",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
+      name: "Benjamin Jr",
+      role: "DOP",
+      image: imageTwelve,
       bio: "Expert in bringing creative concepts to life."
     },
     {
       id: 3,
-      name: "James Chen",
+      name: "Erik David",
       role: "Tech Lead",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+      image: imageOne,
       bio: "Pioneering new technologies in media production."
     },
     {
       id: 4,
-      name: "Sarah Williams",
+      name: "Abel Bamidele",
       role: "Content Strategist",
-      image: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+      image: imageFourteen ,
       bio: "Crafting compelling narratives that resonate."
     }
   ];
@@ -292,21 +300,7 @@ const About = () => {
               <p>We embrace new technologies and methodologies to stay ahead.</p>
             </motion.div>
 
-             <motion.div 
-              className="value-card"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-            >
-              <div className="value-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
-              <h3>Innovation</h3>
-              <p>We embrace new technologies and methodologies to stay ahead.</p>
-            </motion.div>
+            
 
             
             

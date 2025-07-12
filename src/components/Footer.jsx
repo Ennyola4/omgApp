@@ -53,7 +53,7 @@ const Footer = () => {
         <div className="footer-row">
           {/* About Column */}
           <motion.div className="footer-col" variants={itemVariants}>
-            <h4>About MediaLens</h4>
+            <h4>About OvationMedia</h4>
             <p className="footer-description">
               Your premier destination for unfiltered media insights and cutting-edge journalism.
             </p>
@@ -118,7 +118,7 @@ const Footer = () => {
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
         >
-          <p>&copy; {currentYear} MediaLens. All rights reserved.</p>
+          <p>&copy; {currentYear} OvationMedia. All rights reserved.</p>
           <div className="legal-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes, FaSearch } from 'react-icons/fa';
+import { FaBars, FaTimes, FaSearch, FaChevronDown } from 'react-icons/fa';
 import { ImFacebook2 } from 'react-icons/im';
 import { MdEmail } from 'react-icons/md';
 import { BsTwitterX } from 'react-icons/bs';
@@ -16,6 +16,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [activeSubmenu, setActiveSubmenu] = useState(null);
 
   // Define hidden routes
   const hiddenRoutes = ['/signinpage', '/signuppage'];
@@ -32,7 +33,12 @@ const Navbar = () => {
 
   const closeMobileMenu = () => {
     setIsOpen(false);
+    setActiveSubmenu(null);
     document.body.style.overflow = 'auto';
+  };
+
+  const toggleSubmenu = (index) => {
+    setActiveSubmenu(activeSubmenu === index ? null : index);
   };
 
   useEffect(() => {
@@ -55,22 +61,11 @@ const Navbar = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 1024) {
-        closeMobileMenu();
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   // Animation variants
   const menuVariants = {
     hidden: { x: '-100%', opacity: 0 },
-    visible: { 
-      x: 0, 
+    visible: {
+      x: 0,
       opacity: 1,
       transition: {
         type: "spring",
@@ -95,31 +90,49 @@ const Navbar = () => {
     })
   };
 
+  const submenuVariants = {
+    hidden: { height: 0, opacity: 0 },
+    visible: {
+      height: 'auto',
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut"
+      }
+    },
+    exit: { height: 0, opacity: 0 }
+  };
+
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
-    { path: "/mediaservices", label: "Services" },
-    // { path: "/portfolio", label: "Portfolio" },
-    // { path: "/blog", label: "Blog" },
+    {
+      path: "/mediaservices",
+      label: "Services",
+      submenu: [
+        { path: "/video-production", label: "Video Production" },
+        { path: "/photography", label: "Photography" },
+        { path: "/social-media", label: "Social Media Management" }
+      ]
+    },
     { path: "/mediacontactpage", label: "Contact Us" }
-    
   ];
 
   const socialIcons = [
-    { icon: <ImFacebook2 />, url: "#" },
-    { icon: <BsTwitterX />, url: "#" },
-    { icon: <FaLinkedin />, url: "#" },
-    { icon: <FaInstagram />, url: "#" },
-    { icon: <TfiYoutube />, url: "#" },
-    { icon: <MdEmail />, url: "mailto:contact@ovationmedia.com" }
+    { icon: <ImFacebook2 />, url: "#", name: "Facebook" },
+    { icon: <BsTwitterX />, url: "#", name: "Twitter" },
+    { icon: <FaLinkedin />, url: "#", name: "LinkedIn" },
+    { icon: <FaInstagram />, url: "#", name: "Instagram" },
+    { icon: <TfiYoutube />, url: "#", name: "YouTube" },
+    { icon: <MdEmail />, url: "mailto:contact@ovationmedia.com", name: "Email" }
   ];
 
-    if (shouldHideNavbar) {
+  if (shouldHideNavbar) {
     return null;
   }
 
   return (
-    <motion.nav 
+    <motion.nav
       className={`navbar ${isScrolled ? 'scrolled' : ''}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -127,38 +140,38 @@ const Navbar = () => {
     >
       <div className="navbar-container">
         {/* Logo */}
-        <motion.div 
+        <motion.div
           className="logo-wrapper"
           whileHover={{ scale: 1.05 }}
         >
-          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            <div className="logo-container">
-              <motion.img 
-                src={imageSixteen} 
-                className="logo-image" 
+          <div className="mobile-header">
+            <div className="mobile-logo">
+             <Link to='/'>
+              <img
+                src={imageSixteen}
+                className="logo-image"
                 alt="Ovation Media Group Logo"
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.5 }}
               />
-              <motion.span 
-                className="logo-texts"
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                Ovation Media Group
-              </motion.span>
+             </Link>
+              <span className="logo-texts">Ovation Media Group</span>
             </div>
-          </Link>
+            {/* <button 
+                    className="mobile-close-btn"
+                    onClick={closeMobileMenu}
+                    aria-label="Close menu"
+                  >
+                    <FaTimes />
+                  </button> */}
+          </div>
         </motion.div>
 
         {/* Desktop Navigation */}
         <div className="desktop-nav">
           <ul className="nav-menu">
             {navLinks.map((link, index) => (
-              <motion.li 
+              <motion.li
                 key={link.path}
-                className="nav-item"
+                className={`nav-item ${link.submenu ? 'has-submenu' : ''}`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 custom={index}
@@ -166,29 +179,56 @@ const Navbar = () => {
                 animate="visible"
                 variants={itemVariants}
               >
-                <Link 
-                  to={link.path} 
+                <Link
+                  to={link.path}
                   className="nav-links"
                   onClick={closeMobileMenu}
                 >
                   {link.label}
+                  {link.submenu && <FaChevronDown className="submenu-icon" />}
                 </Link>
+
+                {link.submenu && (
+                  <motion.div
+                    className="submenu"
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    variants={submenuVariants}
+                  >
+                    {link.submenu.map((subItem) => (
+                      <Link
+                        key={subItem.path}
+                        to={subItem.path}
+                        className="submenu-item"
+                        onClick={closeMobileMenu}
+                      >
+                        {subItem.label}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
               </motion.li>
             ))}
           </ul>
 
           <div className="nav-actions">
-            <motion.button 
+            <motion.button
               className="search-button"
               onClick={() => setSearchOpen(!searchOpen)}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
+              aria-label="Search"
             >
               <FaSearch />
             </motion.button>
-            <motion.button 
-              className="cta-buttons"
-              whileHover={{ scale: 1.05, boxShadow: "0 5px 15px rgba(0,0,0,0.2)" }}
+            <motion.button
+              className="cta-button"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 5px 15px rgba(0,0,0,0.2)",
+                backgroundColor: "#1a365d"
+              }}
               whileTap={{ scale: 0.95 }}
             >
               Get Started
@@ -197,10 +237,11 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <motion.div 
-          className="menu-icon" 
+        <motion.div
+          className="menu-icon"
           onClick={toggleMenu}
           whileTap={{ scale: 0.9 }}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </motion.div>
@@ -208,14 +249,14 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
-            <motion.div 
+            <motion.div
               className="mobile-menu-backdrop"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={closeMobileMenu}
             >
-              <motion.div 
+              <motion.div
                 className="mobile-menu-content"
                 variants={menuVariants}
                 initial="hidden"
@@ -223,36 +264,107 @@ const Navbar = () => {
                 exit="exit"
                 onClick={(e) => e.stopPropagation()}
               >
+                <div className="mobile-header">
+                  <div className="mobile-logo">
+                    <img
+                      src={imageSixteen}
+                      className="logo-image"
+                      alt="Ovation Media Group Logo"
+                    />
+                    <span className="logo-texts">Ovation Media Group</span>
+                  </div>
+                  {/* <button 
+                    className="mobile-close-btn"
+                    onClick={closeMobileMenu}
+                    aria-label="Close menu"
+                  >
+                    <FaTimes />
+                  </button> */}
+                </div>
+
                 <div className="mobile-search">
-                  <input 
-                    type="text" 
-                    placeholder="Search..." 
+                  <input
+                    type="text"
+                    placeholder="Search..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                   />
-                  <FaSearch className="search-icon" />
+                  <button className="mobile-search-button">
+                    <FaSearch className="search-icon" />
+                  </button>
                 </div>
 
                 <ul className="mobile-nav-menu">
                   {navLinks.map((link, index) => (
-                    <motion.li 
-                      key={link.path}
-                      className="mobile-nav-item"
-                      custom={index}
-                      initial="hidden"
-                      animate="visible"
-                      variants={itemVariants}
-                      onClick={closeMobileMenu}
-                    >
-                      <Link 
-                        to={link.path} 
-                        className="mobile-nav-links"
+                    <React.Fragment key={link.path}>
+                      <motion.li
+                        className={`mobile-nav-item ${link.submenu ? 'has-submenu' : ''}`}
+                        custom={index}
+                        initial="hidden"
+                        animate="visible"
+                        variants={itemVariants}
                       >
-                        {link.label}
-                      </Link>
-                    </motion.li>
+                        <Link
+                          to={link.path}
+                          className="mobile-nav-links"
+                          onClick={!link.submenu ? closeMobileMenu : undefined}
+                        >
+                          {link.label}
+                          {link.submenu && (
+                            <button
+                              className="mobile-submenu-toggle"
+                              onClick={() => toggleSubmenu(index)}
+                              aria-expanded={activeSubmenu === index}
+                              aria-label={`Toggle ${link.label} submenu`}
+                            >
+                              <FaChevronDown className={`submenu-icon ${activeSubmenu === index ? 'open' : ''}`} />
+                            </button>
+                          )}
+                        </Link>
+
+                        {link.submenu && (
+                          <AnimatePresence>
+                            {activeSubmenu === index && (
+                              <motion.ul
+                                className="mobile-submenu"
+                                variants={submenuVariants}
+                                initial="hidden"
+                                animate="visible"
+                                exit="exit"
+                              >
+                                {link.submenu.map((subItem) => (
+                                  <li key={subItem.path}>
+                                    <Link
+                                      to={subItem.path}
+                                      className="mobile-submenu-item"
+                                      onClick={closeMobileMenu}
+                                    >
+                                      {subItem.label}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </motion.ul>
+                            )}
+                          </AnimatePresence>
+                        )}
+                      </motion.li>
+                    </React.Fragment>
                   ))}
                 </ul>
+
+                <div className="mobile-cta">
+                  <motion.button
+                    className="mobile-cta-button"
+                    whileHover={{
+                      scale: 1.02,
+                      backgroundColor: "#1a365d"
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={closeMobileMenu}
+                  >
+                    Get Started
+                  </motion.button>
+                </div>
 
                 <div className="mobile-contact-info">
                   <h4>Contact Us</h4>
@@ -263,11 +375,12 @@ const Navbar = () => {
 
                 <div className="mobile-social-icons">
                   {socialIcons.map((social, index) => (
-                    <motion.a 
+                    <motion.a
                       key={index}
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={social.name}
                       whileHover={{ scale: 1.2, y: -5 }}
                       whileTap={{ scale: 0.9 }}
                     >
@@ -283,28 +396,35 @@ const Navbar = () => {
         {/* Search Overlay */}
         <AnimatePresence>
           {searchOpen && (
-            <motion.div 
+            <motion.div
               className="search-overlay"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSearchOpen(false)}
             >
-              <motion.div 
-                className="search-container"
+              <motion.div
+                className="search-container-two"
                 initial={{ y: -50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -50, opacity: 0 }}
                 onClick={(e) => e.stopPropagation()}
               >
-                <input 
-                  type="text" 
-                  placeholder="Search Ovation Media..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  autoFocus
-                />
-                <button className="search-submit">Search</button>
+                <div className="search-input-wrapper">
+                  <input
+                    type="text"
+                    placeholder="Search Ovation Media..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    autoFocus
+                  />
+                  <button
+                    className="search-submit"
+                    aria-label="Submit search"
+                  >
+                    <FaSearch />
+                  </button>
+                </div>
               </motion.div>
             </motion.div>
           )}
