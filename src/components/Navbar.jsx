@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes, FaSearch, FaChevronDown } from 'react-icons/fa';
 import { ImFacebook2 } from 'react-icons/im';
@@ -17,6 +17,7 @@ const Navbar = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeSubmenu, setActiveSubmenu] = useState(null);
+  const submenuRef = useRef(null);
 
   // Define hidden routes
   const hiddenRoutes = ['/signinpage', '/signuppage'];
@@ -28,6 +29,7 @@ const Navbar = () => {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
+      setActiveSubmenu(null);
     }
   };
 
@@ -40,6 +42,20 @@ const Navbar = () => {
   const toggleSubmenu = (index) => {
     setActiveSubmenu(activeSubmenu === index ? null : index);
   };
+
+  // Close submenu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (submenuRef.current && !submenuRef.current.contains(event.target)) {
+        setActiveSubmenu(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -107,9 +123,9 @@ const Navbar = () => {
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
     {
-      path: "/mediaservices",
-      label: "Services",
+      path: "/mediaservices", label: "Services",
       submenu: [
+        {path : "/mediaservices", label : "Our Services"},
         { path: "/video-production", label: "Video Production" },
         { path: "/photography", label: "Photography" },
         { path: "/social-media", label: "Social Media Management" }
@@ -146,7 +162,7 @@ const Navbar = () => {
         >
           <div className="mobile-header">
             <div className="mobile-logo">
-             <Link to='/'>
+             <Link to='/' onClick={closeMobileMenu}>
               <img
                 src={imageSixteen}
                 className="logo-image"
@@ -155,13 +171,6 @@ const Navbar = () => {
              </Link>
               <span className="logo-texts">Ovation Media Group</span>
             </div>
-            {/* <button 
-                    className="mobile-close-btn"
-                    onClick={closeMobileMenu}
-                    aria-label="Close menu"
-                  >
-                    <FaTimes />
-                  </button> */}
           </div>
         </motion.div>
 
@@ -178,35 +187,47 @@ const Navbar = () => {
                 initial="hidden"
                 animate="visible"
                 variants={itemVariants}
+                ref={link.submenu ? submenuRef : null}
               >
                 <Link
                   to={link.path}
                   className="nav-links"
-                  onClick={closeMobileMenu}
+                  onClick={(e) => {
+                    if (link.submenu) {
+                      e.preventDefault();
+                      toggleSubmenu(index);
+                    } else {
+                      closeMobileMenu();
+                    }
+                  }}
                 >
                   {link.label}
-                  {link.submenu && <FaChevronDown className="submenu-icon" />}
+                  {link.submenu && <FaChevronDown className={`submenu-icon ${activeSubmenu === index ? 'rotate' : ''}`} />}
                 </Link>
 
                 {link.submenu && (
-                  <motion.div
-                    className="submenu"
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    variants={submenuVariants}
-                  >
-                    {link.submenu.map((subItem) => (
-                      <Link
-                        key={subItem.path}
-                        to={subItem.path}
-                        className="submenu-item"
-                        onClick={closeMobileMenu}
+                  <AnimatePresence>
+                    {(activeSubmenu === index) && (
+                      <motion.div
+                        className="submenu"
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        variants={submenuVariants}
                       >
-                        {subItem.label}
-                      </Link>
-                    ))}
-                  </motion.div>
+                        {link.submenu.map((subItem) => (
+                          <Link
+                            key={subItem.path}
+                            to={subItem.path}
+                            className="submenu-item"
+                            onClick={closeMobileMenu}
+                          >
+                            {subItem.label}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 )}
               </motion.li>
             ))}
@@ -273,13 +294,6 @@ const Navbar = () => {
                     />
                     <span className="logo-texts">Ovation Media Group</span>
                   </div>
-                  {/* <button 
-                    className="mobile-close-btn"
-                    onClick={closeMobileMenu}
-                    aria-label="Close menu"
-                  >
-                    <FaTimes />
-                  </button> */}
                 </div>
 
                 <div className="mobile-search">
@@ -289,9 +303,9 @@ const Navbar = () => {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                   />
-                  <button className="mobile-search-button">
+                  {/* <button className="mobile-search-button">
                     <FaSearch className="search-icon" />
-                  </button>
+                  </button> */}
                 </div>
 
                 <ul className="mobile-nav-menu">
@@ -307,13 +321,19 @@ const Navbar = () => {
                         <Link
                           to={link.path}
                           className="mobile-nav-links"
-                          onClick={!link.submenu ? closeMobileMenu : undefined}
+                          onClick={!link.submenu ? closeMobileMenu : (e) => {
+                            e.preventDefault();
+                            toggleSubmenu(index);
+                          }}
                         >
                           {link.label}
                           {link.submenu && (
                             <button
                               className="mobile-submenu-toggle"
-                              onClick={() => toggleSubmenu(index)}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                toggleSubmenu(index);
+                              }}
                               aria-expanded={activeSubmenu === index}
                               aria-label={`Toggle ${link.label} submenu`}
                             >

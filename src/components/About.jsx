@@ -49,7 +49,7 @@ const About = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Temitope Pgunleye",
+      name: "Temitope Ogunleye",
       role: "Production Manager",
       image: imageTwenty,
       bio: "Visionary leader with 15+ years in media innovation."
