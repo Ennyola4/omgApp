@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../css/about.css';
 import imageFourteen from '../images/imageFourteen.jpg';
-import imageOne from '../images/imageOne.jpg';
+import imageTwentyOne from '../images/imageTwentyOne.jpg';
 import imageTwenty from '../images/imageTwenty.jpg';
 import imageTwelve from '../images/imageTwelve.jpg';
 
@@ -39,10 +39,10 @@ const About = () => {
 
   // Images for carousel
   const carouselImages = [
-    "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    "https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-    "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+    "https://pbs.twimg.com/ext_tw_video_thumb/1788627036589768704/pu/img/7vx4qns6K_OlDvs5.jpg",
+    "https://i.ytimg.com/vi/EWVZ5WeNuqQ/sddefault.jpg?v=63c8229e",
+    "https://www.ivory-ng.com/wp-content/uploads/2018/07/IMG_1581_1600x1067-1170x780.jpg",
+    "https://theeagleonline.com.ng/wp-content/uploads/2017/09/PIX-4743-640x313.jpg"
   ];
 
   // Team members data
@@ -58,14 +58,14 @@ const About = () => {
       id: 2,
       name: "Benjamin Jr",
       role: "DOP",
-      image: imageTwelve,
+      image: imageTwentyOne,
       bio: "Expert in bringing creative concepts to life."
     },
     {
       id: 3,
       name: "Erik David",
       role: "Tech Lead",
-      image: imageOne,
+      image: imageTwelve,
       bio: "Pioneering new technologies in media production."
     },
     {
