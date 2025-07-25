@@ -1,8 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import '../css/media-services.css';
 import aos from 'aos';
 import 'aos/dist/aos.css';
-import { 
+import {
   FaNewspaper,
   FaPodcast,
   FaVideo,
@@ -16,6 +17,7 @@ import imageSixteen from '../images/imageSixteen.jpg';
 import service3 from '../images/imageSeven.jpg';
 
 const MediaServices = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     aos.init({
       duration: 800,
@@ -23,42 +25,49 @@ const MediaServices = () => {
     });
   }, []);
 
+
   const mediaServices = [
     {
       icon: <FaNewspaper className="ms-icon" />,
       title: "Investigative Journalism",
       description: "In-depth reporting that uncovers truth and holds power accountable.",
-      color: "#a60606"
+      color: "#a60606",
+      route: "/investigative-journalism"
     },
     {
       icon: <FaPodcast className="ms-icon" />,
       title: "Audio Storytelling",
       description: "Compelling podcasts and audio documentaries that engage audiences.",
-      color: "#ee5050"
+      color: "#ee5050",
+      route: "/audio-storytelling"
     },
     {
       icon: <FaVideo className="ms-icon" />,
       title: "Video Production",
       description: "High-quality video content for news, features, and documentaries.",
-      color: "#4776E6"
+      color: "#4776E6",
+      route: "/video-production"
     },
     {
       icon: <FaPhotoVideo className="ms-icon" />,
       title: "Photo Journalism",
       description: "Powerful visual storytelling that captures the essence of every story.",
-      color: "#00c6ff"
+      color: "#00c6ff",
+      route: "/photo-journalism"
     },
     {
       icon: <FaChartLine className="ms-icon" />,
       title: "Media Analytics",
       description: "Data-driven insights to optimize your content strategy.",
-      color: "#f46b45"
+      color: "#f46b45",
+      route: "/media-analytics"
     },
     {
       icon: <FaGlobe className="ms-icon" />,
       title: "Global Distribution",
       description: "Worldwide syndication to maximize your content's reach.",
-      color: "#a8ff78"
+      color: "#a8ff78",
+      route: "/global-distribution"
     }
   ];
 
@@ -99,11 +108,11 @@ const MediaServices = () => {
         <div className="ms-container-inner">
           <h2 className="ms-section-title" data-aos="fade-up">Our <span className="ms-highlights">Services</span></h2>
           <p className="ms-section-desc">Comprehensive media solutions tailored to your needs</p>
-          
+
           <div className="ms-grid">
             {mediaServices.map((service, index) => (
-              <div 
-                className="ms-card" 
+              <div
+                className="ms-card"
                 key={index}
                 data-aos="fade-up"
                 data-aos-delay={(index + 1) * 100}
@@ -114,7 +123,12 @@ const MediaServices = () => {
                 <h3 className="ms-card-title">{service.title}</h3>
                 <p className="ms-card-desc">{service.description}</p>
                 <div className="ms-card-hover" style={{ backgroundColor: service.color }}>
-                  <button className="ms-btn">Learn More</button>
+                  <button
+                    className="ms-btn"
+                    onClick={() => navigate(service.route)}
+                  >
+                    Learn More
+                  </button>
                 </div>
               </div>
             ))}

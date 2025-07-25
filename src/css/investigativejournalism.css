@@ -1,0 +1,198 @@
+.ij-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.ij-hero {
+  height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.807), rgba(0, 0, 0, 0.713)), url('../images/imageSix.jpg') fixed no-repeat center center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.ij-hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.ij-hero-text {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Mission Section */
+.ij-mission {
+  padding: 5rem 2rem;
+  background: #f8f9fa;
+}
+
+.ij-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ij-mission-card {
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.ij-mission-card:hover {
+  transform: translateY(-10px);
+}
+
+.ij-icon {
+  font-size: 2.5rem;
+  color: #a60606;
+  margin-bottom: 1rem;
+}
+
+/* Featured Investigations */
+.ij-featured {
+  padding: 5rem 2rem;
+}
+
+.ij-featured h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.ij-cases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ij-case-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.ij-case-card:hover {
+  transform: translateY(-5px);
+}
+
+.ij-case-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.ij-case-content {
+  padding: 1.5rem;
+}
+
+/* Awards Section */
+.ij-awards {
+  background: #1a1a1a;
+  color: white;
+  padding: 5rem 2rem;
+}
+
+.ij-awards-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ij-award-icon {
+  font-size: 4rem;
+  color: gold;
+  margin-bottom: 2rem;
+}
+
+.ij-awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.ij-award {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/* CTA Section */
+.ij-cta {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #a60606, #ff4b4b);
+  color: white;
+  text-align: center;
+}
+
+.ij-cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ij-cta-button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background: white;
+  color: #a60606;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.ij-cta-button:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ij-hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .ij-hero-text {
+    font-size: 1.2rem;
+  }
+
+  .ij-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ij-cases {
+    grid-template-columns: 1fr;
+  }
+
+  .ij-awards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

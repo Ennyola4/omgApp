@@ -11,6 +11,8 @@ import imageFourteen from '../images/imageFourteen.jpg';
 import imageTwentyOne from '../images/imageTwentyOne.jpg';
 import imageTwenty from '../images/imageTwenty.jpg';
 import imageTwelve from '../images/imageTwelve.jpg';
+import aos from 'aos';
+import 'aos/dist/aos.css';
 
 
 
@@ -19,6 +21,14 @@ import imageTwelve from '../images/imageTwelve.jpg';
 
 
 const About = () => {
+
+  useEffect(() => {
+    aos.init({
+      duration: 1000,
+      once: true
+    });
+  }, []);
+
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -72,7 +82,7 @@ const About = () => {
       id: 4,
       name: "Abel Bamidele",
       role: "Content Strategist",
-      image: imageFourteen ,
+      image: imageFourteen,
       bio: "Crafting compelling narratives that resonate."
     }
   ];
@@ -91,13 +101,13 @@ const About = () => {
       <section className="hero-section">
         <div className="hero-gradient"></div>
         <div className="container">
-          <motion.div 
+          <motion.div
             className="hero-content"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.h4 
+            <motion.h4
               className="subtitle"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -105,17 +115,19 @@ const About = () => {
             >
               Innovating media to standard
             </motion.h4>
-            
-            <motion.h1 
+
+            <motion.h1
               className="title"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-            >
+              data-aos="fade-left"
+              data-aos-offset="300"
+              data-aos-easing="ease-in-sine">
               About <span>Us</span>
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               className="description"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -146,9 +158,9 @@ const About = () => {
           {carouselImages.map((img, index) => (
             <SwiperSlide key={index}>
               <div className="swiper-slide-content">
-                <img 
-                  src={img} 
-                  alt={`Showcase ${index}`} 
+                <img
+                  src={img}
+                  alt={`Showcase ${index}`}
                   loading="lazy"
                 />
                 <div className="slide-overlay"></div>
@@ -165,7 +177,7 @@ const About = () => {
             <h2>Our Story</h2>
             {/* <div className="divider"></div> */}
           </div>
-          
+
           <div className="story-content">
             <div className="story-text">
               <p>
@@ -177,7 +189,7 @@ const About = () => {
               <motion.button
                 className="cta-buttonOne"
                 onClick={handleSignUpPageClick}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
                   boxShadow: "0 5px 15px rgba(0, 0, 0, 0.2)"
                 }}
@@ -189,16 +201,16 @@ const About = () => {
                   <>
                     LEARN MORE
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </>
                 )}
               </motion.button>
             </div>
             <div className="story-image">
-              <img 
-                src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
-                alt="Our team working" 
+              <img
+                src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+                alt="Our team working"
                 loading="lazy"
               />
             </div>
@@ -211,7 +223,7 @@ const About = () => {
         <div className="container">
           <div className="stats-grid">
             {stats.map((stat, index) => (
-              <motion.div 
+              <motion.div
                 className="stat-card"
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
@@ -233,10 +245,10 @@ const About = () => {
           <div className="section-header">
             <h2>Meet The Team</h2>
           </div>
-          
+
           <div className="team-grid">
             {teamMembers.map((member) => (
-              <motion.div 
+              <motion.div
                 className="team-card"
                 key={member.id}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -265,9 +277,9 @@ const About = () => {
           <div className="section-header">
             <h2>Our Values</h2>
           </div>
-          
+
           <div className="values-grid">
-            <motion.div 
+            <motion.div
               className="value-card"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -276,15 +288,15 @@ const About = () => {
             >
               <div className="value-icon">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M8 14C8 14 9.5 16 12 16C14.5 16 16 14 16 14M9 9H9.01M15 9H15.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M8 14C8 14 9.5 16 12 16C14.5 16 16 14 16 14M9 9H9.01M15 9H15.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
               <h3>Creativity</h3>
               <p>We push boundaries and challenge conventions to deliver fresh perspectives.</p>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className="value-card"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -293,18 +305,18 @@ const About = () => {
             >
               <div className="value-icon">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M20 12H4M4 12L10 6M4 12L10 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
               <h3>Innovation</h3>
               <p>We embrace new technologies and methodologies to stay ahead.</p>
             </motion.div>
 
-            
 
-            
-            
-            <motion.div 
+
+
+
+            <motion.div
               className="value-card"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -313,8 +325,8 @@ const About = () => {
             >
               <div className="value-icon">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M12 8V12L15 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M12 8V12L15 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
               <h3>Excellence</h3>

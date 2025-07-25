@@ -169,15 +169,6 @@ const MediaHomepage = () => {
         <div className="hero-overlay"></div>
         
         <div className="hero-content">
-          {/* Header */}
-          {/* <motion.header variants={itemVariants}>
-            <div className="logo">Ovation Media Group</div>
-            <nav>
-              <button className="nav-btn">About</button>
-              <button className="nav-btn">Services</button>
-              <button className="nav-btn">Contact</button>
-            </nav>
-          </motion.header> */}
 
           {/* Main Hero Text */}
           <div className="hero-text">

@@ -53,7 +53,7 @@ const Footer = () => {
         <div className="footer-row">
           {/* About Column */}
           <motion.div className="footer-col" variants={itemVariants}>
-            <h4>About OvationMedia</h4>
+            <h4>About</h4>
             <p className="footer-description">
               Your premier destination for unfiltered media insights and cutting-edge journalism.
             </p>
@@ -107,9 +107,13 @@ const Footer = () => {
               <a href="#" aria-label="Instagram"><FaInstagram /></a>
               <a href="#" aria-label="LinkedIn"><FaLinkedin /></a>
               <a href="#" aria-label="YouTube"><FaYoutube /></a>
-            </div>
+            </div> <br />
+          <h1>
+            <span className="footer-logo">Ovation Media Group</span>
+          </h1>
           </motion.div>
         </div>
+      
 
         <motion.div 
           className="footer-bottom"
