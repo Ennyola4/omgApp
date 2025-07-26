@@ -7,18 +7,20 @@
 
 /* Animated Wave Hero */
 .as-hero {
-  height: 75vh;
+  height: 60vh;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.807), rgba(0, 0, 0, 0.713)), url('../images/imageTwo.jpg') fixed no-repeat center center;
+
 }
 
 .as-wave {
   position: absolute;
-  width: 60%;
-  height: 60%;
+  width: 50%;
+  height: 70%;
   background: linear-gradient(45deg, #ee5050, #4776E6);
   /* opacity: 0.6; */
 }
@@ -27,6 +29,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
+
 }
 
 .as-wave:nth-child(1) {
@@ -40,24 +43,34 @@
 
 .as-wave:nth-child(3) {
   animation: wave 16s infinite;
-  /* opacity: 0.2; */
+}
+
+.as-wave:nth-child(4) {
+  animation: wave 20s infinite;
+}
+
+.as-wave:nth-child(5) {
+  animation: wave 24s infinite;
 }
 
 @keyframes wave {
-  0% { transform: translateX(-100%) rotate(5deg); }
-  100% { transform: translateX(100%) rotate(25deg); }
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
 }
 
-.as-featured-header{
+.as-featured-header {
   padding: 20px;
   margin-bottom: 5vh;
   text-align: center;
-  color: #ee5050;
 }
 
 .as-featured-header h2 {
-  font-size: 3.5rem;
-  font-weight: bold;
+  font-size: 2.5rem;
   text-shadow: 2px 2px 4px rgba(131, 128, 128, 0.3);
 }
 
@@ -68,9 +81,9 @@
 }
 
 .as-hero-content h1 {
-  font-size: 4.5rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Sound Wave Visualizer */
@@ -89,7 +102,7 @@
 
 .as-bar {
   width: 4px;
-  background: #ee5050;
+  background: #f1ecec;
   border-radius: 2px;
   animation: soundBars 1.2s ease-in-out infinite;
 }
@@ -99,8 +112,15 @@
 }
 
 @keyframes soundBars {
-  0%, 100% { height: 20px; }
-  50% { height: 80px; }
+
+  0%,
+  100% {
+    height: 20px;
+  }
+
+  50% {
+    height: 80px;
+  }
 }
 
 /* Services Grid */
@@ -110,8 +130,14 @@
 
 .as-services h2 {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 7rem;
   font-size: 2.5rem;
+}
+
+.as-services span {
+  color: red;
+  text-shadow: 2px 2px 4px rgba(131, 128, 128, 0.3);
+
 }
 
 .as-services-grid {
@@ -123,7 +149,7 @@
 }
 
 .as-service-card {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   padding: 2rem;
   border-radius: 15px;
   backdrop-filter: blur(10px);
@@ -132,7 +158,7 @@
 
 .as-service-card:hover {
   transform: translateY(-10px);
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .as-icon {
@@ -144,6 +170,10 @@
 /* Featured Podcasts */
 .as-featured {
   padding: 5rem 2rem;
+}
+
+.as-featured span {
+  color: red;
 }
 
 .as-podcast-grid {
@@ -211,7 +241,7 @@
 .as-player-demo {
   margin-top: 2rem;
   padding: 2rem;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 15px;
 }
 
@@ -234,7 +264,7 @@
 .as-progress-bar {
   flex: 1;
   height: 4px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 2px;
   overflow: hidden;
 }
@@ -247,8 +277,13 @@
 }
 
 @keyframes progress {
-  0% { width: 0; }
-  100% { width: 100%; }
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
 }
 
 /* Responsive Design */
@@ -256,19 +291,19 @@
   .as-hero-content h1 {
     font-size: 2.5rem;
   }
-  
+
   .as-services-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .as-podcast-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .as-bars {
     height: 60px;
   }
-  
+
   .as-bar {
     width: 3px;
   }
@@ -278,7 +313,7 @@
   .as-hero-content h1 {
     font-size: 2rem;
   }
-  
+
   .as-player-demo {
     padding: 1rem;
   }

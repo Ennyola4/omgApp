@@ -6,6 +6,16 @@ import 'aos/dist/aos.css';
 import imageTwelve from "../images/imageTwelve.jpg";
 import imageTwo from "../images/imageTwo.jpg";
 import imageSix from "../images/imageSix.jpg";
+import imageEight from "../images/imageEight.jpg";
+import imageThree from "../images/imageThree.jpg";
+import imageFour from "../images/imageFour.jpg";
+import imageTen from "../images/imageTen.jpg";
+import imageTwentyThree from "../images/imageTwentyThree.jpg";
+import imageTwentyFour from "../images/imageTwentyFour.jpg";
+
+
+
+
 
 
 
@@ -24,19 +34,19 @@ const AudioStorytelling = () => {
       title: "The Human Experience",
       duration: "45:00",
       category: "Documentary",
-      image: imageTwelve
+      image: imageTen
     },
     {
       title: "Tech Horizons",
       duration: "30:00",
       category: "Technology",
-      image: imageTwelve
+      image: imageTwentyThree
     },
     {
       title: "Nature's Whispers",
       duration: "35:00",
       category: "Nature",
-      image: imageTwelve
+      image: imageTwentyFour
     }
   ];
 
@@ -45,7 +55,13 @@ const AudioStorytelling = () => {
       {/* Animated Wave Hero Section */}
       <section className="as-hero">
         <div className="as-wave">
-          <img className='as-wave-img' src={imageTwelve} alt="" />
+          <img className='as-wave-img' src={imageFour} alt="" />
+        </div>
+          <div className="as-wave">
+          <img className='as-wave-img' src={imageEight} alt="" />
+        </div>
+          <div className="as-wave">
+          <img className='as-wave-img' src={imageThree} alt="" />
         </div>
         <div className="as-wave">
           <img className='as-wave-img' src={imageTwo} alt="" />
@@ -70,7 +86,7 @@ const AudioStorytelling = () => {
 
       {/* Services Grid */}
       <section className="as-services">
-        <h2 data-aos="fade-up">Our Audio Services</h2>
+        <h2 data-aos="fade-up">Our Audio <span>Services</span></h2>
         <div className="as-services-grid">
           <div className="as-service-card" data-aos="flip-left">
             <FaMicrophone className="as-icon" />
@@ -78,6 +94,21 @@ const AudioStorytelling = () => {
             <p>Professional recording and editing for compelling podcasts</p>
           </div>
           <div className="as-service-card" data-aos="flip-up">
+            <FaHeadphones className="as-icon" />
+            <h3>Audio Documentaries</h3>
+            <p>Immersive storytelling through sound and narrative</p>
+          </div>
+           <div className="as-service-card" data-aos="flip-up">
+            <FaHeadphones className="as-icon" />
+            <h3>Audio Documentaries</h3>
+            <p>Immersive storytelling through sound and narrative</p>
+          </div>
+           <div className="as-service-card" data-aos="flip-up">
+            <FaHeadphones className="as-icon" />
+            <h3>Audio Documentaries</h3>
+            <p>Immersive storytelling through sound and narrative</p>
+          </div>
+           <div className="as-service-card" data-aos="flip-up">
             <FaHeadphones className="as-icon" />
             <h3>Audio Documentaries</h3>
             <p>Immersive storytelling through sound and narrative</p>
@@ -93,7 +124,7 @@ const AudioStorytelling = () => {
       {/* Featured Podcasts */}
       <section className="as-featured">
         <div className="as-featured-header" data-aos="fade-up">
-          <h2 data-aos="fade-up">Featured Productions</h2>
+          <h2 data-aos="fade-up">Featured <span> Productions</span></h2>
         </div>
         <div className="as-podcast-grid">
           {featuredPodcasts.map((podcast, index) => (
