@@ -175,8 +175,9 @@
 }
 
 .social-icons a {
-  color: var(--text-light);
-  font-size: 1.2rem;
+  /* color: var(--text-light); */
+  font-size: 1.5rem;
+  padding: 7px;
   transition: var(--transition);
   display: flex;
   align-items: center;
@@ -185,12 +186,13 @@
   height: 36px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.779);
+  background-color: rgb(200, 200, 200);
 }
 
 .social-icons a:hover {
   color: white;
   /* background: var(--accent-color); */
-  transform: translateY(-6px);
+  transform: translateY(-10px);
 }
 
 /* Footer Bottom */

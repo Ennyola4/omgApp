@@ -102,15 +102,13 @@ const Footer = () => {
             <h4>Newsletter</h4>
             <p>Subscribe to our newsletter for the latest updates.</p>
             <div className="social-icons">
-              <a href="#" aria-label="Facebook"><FaFacebook /></a>
-              <a href="#" aria-label="Twitter"><FaTwitter /></a>
-              <a href="#" aria-label="Instagram"><FaInstagram /></a>
-              <a href="#" aria-label="LinkedIn"><FaLinkedin /></a>
-              <a href="#" aria-label="YouTube"><FaYoutube /></a>
+              <a href="#" aria-label="Facebook" style={{color : "blue"}} ><FaFacebook /></a>
+              <a href="#" aria-label="Twitter" style={{color : "black"}} ><FaTwitter /></a>
+              <a href="#" aria-label="Instagram" style={{color : "brown"}} ><FaInstagram /></a>
+              <a href="#" aria-label="LinkedIn"style={{color : "blue"}} ><FaLinkedin /></a>
+              <a href="#" aria-label="YouTube" style={{color : "red"}} ><FaYoutube /></a>
             </div> <br />
-          <h1>
-            <span className="footer-logo">Ovation Media Group</span>
-          </h1>
+         
           </motion.div>
         </div>
       
