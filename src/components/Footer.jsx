@@ -3,6 +3,8 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube } from 'react
 import { MdEmail, MdLocationOn, MdPhone } from 'react-icons/md';
 import { useLocation } from 'react-router-dom';
 import '../css/footer.css';
+import { FaXTwitter } from "react-icons/fa6";
+
 
 const Footer = () => {
   const location = useLocation();
@@ -103,7 +105,7 @@ const Footer = () => {
             <p>Subscribe to our newsletter for the latest updates.</p>
             <div className="social-icons">
               <a href="#" aria-label="Facebook" style={{color : "blue"}} ><FaFacebook /></a>
-              <a href="#" aria-label="Twitter" style={{color : "black"}} ><FaTwitter /></a>
+              <a href="#" aria-label="Twitter" style={{color : "black"}} ><FaXTwitter /></a>
               <a href="#" aria-label="Instagram" style={{color : "brown"}} ><FaInstagram /></a>
               <a href="#" aria-label="LinkedIn"style={{color : "blue"}} ><FaLinkedin /></a>
               <a href="#" aria-label="YouTube" style={{color : "red"}} ><FaYoutube /></a>
