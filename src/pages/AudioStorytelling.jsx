@@ -70,7 +70,7 @@ const AudioStorytelling = () => {
           <img className='as-wave-img' src={imageSix} alt="" />
         </div>
         <div className="as-hero-content" data-aos="zoom-in">
-          <h1>Audio Storytelling</h1>
+          <h1>Audio  <span>Storytelling</span>...</h1>
           <p>Where Stories Come Alive Through Sound</p>
         </div>
       </section>
