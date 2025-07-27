@@ -160,25 +160,26 @@
 
 .story-text p {
   margin-bottom: 25px;
-  font-size: 1.1rem;
-  color: #555;
+  font-size: 1.5rem;
+  color: #ababab;
+  font-style: italic;
+  font-family: cursive;
 }
 
 .story-image {
-  border-radius: 40px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.343);
+  box-shadow: 0 5px 100px rgba(0, 0, 0, 0.343);
 }
 
 .story-image img {
   width: 100%;
   height: 100%;
   display: block;
-  transition: transform 0.5s ease;
+  transition: transform 0.8s ease;
 }
 
 .story-image:hover img {
-  transform: scale(1.03);
+  transform: scale(1.09);
 }
 
 /* Stats Section */
@@ -329,16 +330,21 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 15px 30px;
-  background: linear-gradient(90deg, #9b2020, #ff0000);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: white;
+  color: rgb(0, 0, 0);
+  font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(58, 123, 213, 0.3);
+  border: 1px solid black;
+}
+
+.cta-buttonOne:hover {
+  background-color: #3a7bd5;
+  color: white;
+  border-color: #3a7bd5;
+  transition: all 0.8s ease-in-out;
 }
 
 .cta-button svg {
