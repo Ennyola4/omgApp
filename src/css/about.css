@@ -160,10 +160,11 @@
 
 .story-text p {
   margin-bottom: 25px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #606060;
-  font-style: italic;
+  /* font-style: italic; */
   font-family: cursive;
+  font-weight: 700;
 }
 
 .story-image {
