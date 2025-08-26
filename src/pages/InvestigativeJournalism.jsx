@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import '../css/investigativejournalism.css';
+import { useLocation } from "react-router-dom";
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaSearch, FaShieldAlt, FaNewspaper, FaAward } from 'react-icons/fa';
@@ -8,6 +10,10 @@ import imageTwo from "../images/imageTwo.jpg";
 import imageSix from "../images/imageSix.jpg";
 
 const InvestigativeJournalism = () => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -72,8 +78,8 @@ const InvestigativeJournalism = () => {
         <h2 data-aos="fade-up">Featured Investigations</h2>
         <div className="ij-cases">
           {investigations.map((case_, index) => (
-            <div 
-              className="ij-case-card" 
+            <div
+              className="ij-case-card"
               key={index}
               data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
             >

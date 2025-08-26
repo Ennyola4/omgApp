@@ -186,12 +186,12 @@
   height: 36px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.779);
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(255, 255, 255);
 }
 
 .social-icons a:hover {
   color: white;
-  /* background: var(--accent-color); */
+  background: var(--accent-color);
   transform: translateY(-10px);
 }
 

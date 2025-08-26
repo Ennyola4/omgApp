@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../css/audiostorytelling.css';
+import { useLocation } from "react-router-dom";
 import { FaMicrophone, FaHeadphones, FaPodcast, FaPlay, FaPause } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -20,6 +21,12 @@ import imageTwentyFour from "../images/imageTwentyFour.jpg";
 
 
 const AudioStorytelling = () => {
+
+   const location = useLocation();
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [location.pathname]);
+
   const [isPlaying, setIsPlaying] = useState(false);
   
   useEffect(() => {
